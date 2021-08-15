@@ -5,7 +5,7 @@ export default class Header extends React.Component {
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">
-                        Recipe
+                        NutriCare
                     </a>
                     <button
                         class="navbar-toggler"
@@ -18,32 +18,37 @@ export default class Header extends React.Component {
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <div style={{ marginLeft: '20%' }} class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                            <li class="nav-item">
+                            <li className="nav-item pr-3">
                                 <a class="nav-link active" aria-current="page" href="/">
                                     Home
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/features">
-                                    Features
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="/services">
+                                    Services
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/pricing">
-                                    Pricing
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="/programs">
+                                    Programs
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="/profile">
+                                    Profile
+                                </a>
+                            </li>
+
+                            <li class="nav-item pl-5">
                                 <a
-                                    class="nav-link disabled"
-                                    href="/"
-                                    tabindex="-1"
-                                    aria-disabled="true"
+                                    class="nav-link"
+                                    href="/aboutus"
                                 >
-                                    Disabled
+                                    About Us
                                 </a>
+
                             </li>
                         </ul>
                     </div>
