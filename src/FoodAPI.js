@@ -19,7 +19,7 @@ class FoodAPI extends React.Component {
     recipeSearch = async (e) => {
         e.preventDefault();
         const foodName = e.target.food.value;
-        const URL = `https://api.edamam.com/search?app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_API_KEY}&q=chicken&format=json`;
+        const URL = `https://api.edamam.com/search?app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_API_KEY}&q=${foodName}&format=json`;
 
         try {
             let recipeResult = await fetch(URL);
@@ -46,7 +46,7 @@ class FoodAPI extends React.Component {
     render() {
         return (
             <div className="container" style={{ marginTop: "10px" }}>
-                <h1 className="header bg-dark text-white center" style={{ textAlign: 'center' }}>City Explorer</h1>
+                <h1 className="header bg-dark text-white center" style={{ textAlign: 'center' }}>Food Searcher</h1>
                 <Form className onSubmit={this.recipeSearch}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Recipe Label</Form.Label>
