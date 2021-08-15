@@ -1,87 +1,70 @@
-import React from 'react';
-import axios from 'axios';
-import { Form, Button, Table } from 'react-bootstrap'
-
-
-class FoodAPI extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            label: '',
-            img: '',
-            calories: '',
-            url: '',
-            err: 'no response',
-            showErr: false,
-        }
-    }
-
-    recipeSearch = async (e) => {
-        e.preventDefault();
-        const foodName = e.target.food.value;
-        const URL = `https://api.edamam.com/search?app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_API_KEY}&q=${foodName}&format=json`;
-
-        try {
-            let recipeResult = await fetch(URL);
-            console.log(recipeResult)
-            let jsonData = await recipeResult.json()
-            this.setState({
-                label: jsonData.hits[0].recipe.label,
-                img: jsonData.hits[0].recipe.image,
-                calories: jsonData.hits[0].recipe.calories,
-                url: jsonData.hits.recipe[0].url,
-                showErr: false,
-            })
-        }
-        catch (error) {
-            this.setState(
-                {
-                    showErr: true,
-                }
-            )
-        }
-
+import React from "react";
+import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+export default class FoodAPI extends React.Component {
+    state = {
+        loading: true,
+        recipes: []
     };
 
+    async componentDidMount() {
+        const url = "https://api.edamam.com/search?app_id=deaf362d&app_key=da028fb12902501b23d2358ae3006d81&q=pizza";
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+        this.setState({ recipes: data.hits, loading: false });
+    }
+
     render() {
+        if (this.state.loading) {
+            return <div>loading...</div>;
+        }
+
+        if (!this.state.recipes.length) {
+            return <div>didn't get a recipe</div>;
+        }
+
+
         return (
-            <div className="container" style={{ marginTop: "10px" }}>
-                <h1 className="header bg-dark text-white center" style={{ textAlign: 'center' }}>Food Searcher</h1>
-                <Form className onSubmit={this.recipeSearch}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Recipe Label</Form.Label>
-                        <Form.Control type="text" placeholder="Enter food name" name="food" />
-                    </Form.Group>
+            <div>
+                {this.state.recipes.map(recipe => (
+                    <Card style={{ width: '20rem', float: 'right', margin: '2rem 4rem 1rem 2rem' }} className="text-center mb-3 bg-dark">
+                        <Card.Title className="p-3 text-white">Name: {recipe.recipe.label}</Card.Title>
+                        <ListGroupItem>
+                            <Card.Img src={recipe.recipe.image} fluid="true" alt="No image for this movie" />
+                        </ListGroupItem>
+                        <Card.Body className="bg-info" style={{ maxHeight: '10rem' }}>
+                            {recipe.recipe.label}
+                        </Card.Body>
+                        <ListGroup className="list-group-flush">
+                            <ListGroupItem>
+                                Label:{' '}
+                                <span>
+                                    {recipe.recipe.label}
+                                </span>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                Source:{' '}
+                                <span>
+                                    {recipe.recipe.source}
+                                </span>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                Calories:{' '}
+                                <span >
+                                    {recipe.recipe.calories}
+                                </span>
+                            </ListGroupItem>
+                            <ListGroupItem>
+                                TotalWeight:{' '}
+                                <span >
+                                    {recipe.recipe.totalWeight}
+                                </span>
+                            </ListGroupItem>
 
-                    <Button variant="primary" type="submit">
-                        Search
-                    </Button>
-                </Form>
-
-                <Table striped bordered hover size="sm mt-4">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Recipe Title</th>
-                            <th>Recipe Calories</th>
-                            <th>Recipe URL</th>
-                            <th>Recipe Image</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>{this.state.label}</td>
-                            <td>{this.state.calories}</td>
-                            <td>{this.state.url}</td>
-                            <td>{this.state.img}</td>
-                        </tr>
-                    </tbody>
-                </Table>
-                <div className='bg-danger text-white text-center' style={{ fontSize: '25px' }}>{this.state.showErr ? <p>{this.state.err}</p> : ''}</div>
+                        </ListGroup>
+                    </Card>
+                ))}
             </div>
         )
     }
 }
-
-export default FoodAPI;
