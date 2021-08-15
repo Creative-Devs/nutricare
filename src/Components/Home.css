@@ -1,0 +1,99 @@
+.container {
+    position: relative;
+    /* width: 100%;
+    max-width: 400px; */
+  }
+  
+  .container  {
+    width: 100%;
+    height: auto;
+  }
+  
+   .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: rgb(201, 226, 141);
+    color: rgb(143, 53, 53);
+    font-size: 30px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+    
+  }
+  
+ .btn:hover {
+    background-color: whitesmoke;
+  }
+
+  /* div h3{
+    textAlign :"center"
+   
+  }  */
+
+  section{
+   /* max-width: 700px; */
+  /* margin: auto; */
+  background: rgb(241, 221, 221);
+  /* padding: 10px; */
+  background-image: url("https://i0.wp.com/saintpolicesystems.com/wp-content/uploads/2018/06/blue-light-backgrounds-background-opera-image-graphics-community-speeddials.jpg?w=1440");
+
+
+  /* background-image: url("https://i.pinimg.com/564x/d0/33/98/d03398a1a49061d02a55bdb1924baa56.jpg"); */
+   /* background-repeat: no-repeat; */
+  /* background-position: right top;
+  margin-right: 200px;  */
+  text-align: center;
+}
+
+  .welcoming{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    /* background-color: rgb(248, 194, 194); */
+    color: rgb(143, 53, 53);
+    font-size:35px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .healthy-living{
+    color: rgb(143, 53, 53);
+    font-size:25px;
+    margin:5%;
+    font-family: 'Teko', sans-serif;
+  }
+
+  .cardTitle{
+    font-family: 'Anton', sans-serif;
+    color: rgb(143, 53, 53);
+  }
+
+  .cardText{
+    font-family: 'Fira Sans', sans-serif;
+    color: rgb(179, 113, 113);
+  }
+
+  .healthyTips{
+    font-family: 'Anton', sans-serif;
+    color: rgb(143, 53, 53);
+    margin-top: 5%;
+    margin-bottom: 3%;
+  }
+
+  .carsouselInfo{
+    font-family: 'Teko', sans-serif;
+    color: rgb(82, 66, 66);
+  }
