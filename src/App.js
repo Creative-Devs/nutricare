@@ -13,6 +13,7 @@ import Logout from './components/Logout'
 import Profile from './components/Profile'
 import Home from './components/Home'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import FoodAPI from './FoodAPI';
 
 
 class App extends React.Component {
@@ -31,6 +32,7 @@ class App extends React.Component {
                   <>
                     <Logout />
                     <Home />
+                    <FoodAPI />
                   </>
                 )}
                 {!isAuthenticated && (
