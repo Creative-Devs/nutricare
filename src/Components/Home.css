@@ -15,8 +15,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: rgb(201, 226, 141);
-    color: rgb(143, 53, 53);
+    background-color: rgb(226, 168, 168);
+    color: rgb(255, 249, 249);
     font-size: 30px;
     padding: 12px 24px;
     border: none;
@@ -24,6 +24,7 @@
     border-radius: 5px;
     text-align: center;
     font-family: 'Anton', sans-serif;
+    margin-top: 4%;
     
   }
   
@@ -57,16 +58,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    /* background-color: rgb(248, 194, 194); */
-    color: rgb(143, 53, 53);
+    background-color: rgb(238, 209, 209);
+    color: rgb(255, 249, 249);
     font-size:35px;
     padding: 12px 24px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
     text-align: center;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-family: 'Anton', sans-serif;
+    margin-top: 5%;
   }
 
   .healthy-living{

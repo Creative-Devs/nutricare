@@ -39,7 +39,7 @@ class Home extends React.Component {
     render() {
         return (
             <section>
-                <img height="400px" width="1300" src="https://img5.goodfon.com/wallpaper/nbig/7/1e/yoga-pose-relax.jpg"></img>
+                <img height="400px" width="1300" src="https://previews.123rf.com/images/udra/udra1801/udra180100039/93969575-fresh-fruits-vegetables-and-heart-shape-with-stethoscope-health-diet-concept.jpg"></img>
 
                 <p class='welcoming'>
                     <h1> Welcome to NUTRICARE </h1>
