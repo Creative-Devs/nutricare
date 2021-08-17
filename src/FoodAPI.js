@@ -179,14 +179,13 @@ class FoodAPI extends React.Component {
                                     {recipe.recipe.dietLabels}
                                 </span>
                             </ListGroupItem>
-                            <Button variant="outline-danger" style={{ marginLeft: '10px' }} onClick={() => this.deleteRecipe(recipe._id)}>Delete Recipe</Button>
-                            <Button variant="outline-danger" onClick={() => this.handelUpdatedModal(recipe)}>Update Recipe</Button>
+                            <Button variant="outline-danger" style={{ marginLeft: '10px' }} onClick={() => this.addRecipe(recipe._id)}>Add to favorite</Button>
 
                         </ListGroup>
                     </Card>
                 ))}
-                Label:{' '}
-                <span>
+                Calories:{' '}
+                <span style={{ color: 'black' }}>
                     {(this.state.calories + this.state.unit)}
                 </span>
                 <img src={this.state.analyze} alt="" />
@@ -195,18 +194,18 @@ class FoodAPI extends React.Component {
                         <Form.Label>Search</Form.Label>
                         <Form.Control type="text" name="search" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    {/* <Button variant="primary" type="submit">
                         Submit
-                    </Button>
+                    </Button> */}
                 </Form>
                 <Form onSubmit={this.calorieCalculator}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Calculate Calories</Form.Label>
                         <Form.Control type="text" name="calories" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    {/* <Button variant="primary" type="submit">
                         Submit
-                    </Button>
+                    </Button> */}
                 </Form>
             </div>
         )

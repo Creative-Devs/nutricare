@@ -33,7 +33,7 @@ class App extends React.Component {
                   <>
                     <Logout />
                     <Home />
-                    <FoodAPI />
+
                   </>
                 )}
                 {!isAuthenticated && (
@@ -46,17 +46,23 @@ class App extends React.Component {
               <Route exact path="/profile">
                 {isAuthenticated && (
                   <>
+                    <Logout />
                     <Profile />
                   </>
                 )}
               </Route>
               <Route exact path="/programs">
+                <Logout />
                 <Programs />
               </Route>
 
               <Route exact path="/services">
                 <Services />
               </Route>
+              <Route exact path="/recipes">
+                <FoodAPI />
+              </Route>
+
               {/* <Route exact path="/aboutUs">
                 <AboutUs/>
               </Route> */}
