@@ -13,6 +13,7 @@ import Logout from './components/Logout'
 import Profile from './components/Profile'
 import Home from './components/Home'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Programs from './components/Programs';
 
 
 class App extends React.Component {
@@ -29,7 +30,7 @@ class App extends React.Component {
               <Route exact path="/">
                 {(isAuthenticated &&
                   <>
-                    <Logout />
+                    {/* <Logout /> */}
                     <Home />
                   </>
                 )}
@@ -47,16 +48,17 @@ class App extends React.Component {
                   </>
                 )}
               </Route>
-              {/* <Route exact path="/programs">
+              <Route exact path="/programs">
                 <Programs/>
               </Route>
             
-              <Route exact path="/services">
+              {/* <Route exact path="/services">
                 <Services/>
               </Route>
               <Route exact path="/aboutUs">
                 <AboutUs/>
               </Route> */}
+
             </Switch>
             <Footer />
           </IsLoadingAndError>
