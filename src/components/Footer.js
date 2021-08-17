@@ -7,7 +7,7 @@ class Footer extends React.Component {
     return (
 
       <>
-        <footer>
+        {/* <footer>
 
           <h3 class="title-logo--footer">Follow<span>Us</span></h3>
 
@@ -35,7 +35,7 @@ class Footer extends React.Component {
           <p class="copy-rights">
             Copyright NutriCare &copy; 2021
           </p>
-        </footer>
+        </footer> */}
       </>
     )
 
