@@ -2,7 +2,7 @@ import React from 'react';
 export default class Header extends React.Component {
     render() {
         return (
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav  class="navbar navbar-expand-lg navbar-light bg-light" >
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">
                         NutriCare

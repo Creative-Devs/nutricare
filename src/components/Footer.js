@@ -1,12 +1,12 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
-import { FaFacebookSquare } from "react-icons/fa";
-import { GoMarkGithub } from "react-icons/go";
-import { AiFillInstagram } from "react-icons/ai";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './header.css'
+// import Navbar from 'react-bootstrap/Navbar';
+// import Nav from 'react-bootstrap/Nav';
+// import Container from 'react-bootstrap/Container';
+// import { FaFacebookSquare } from "react-icons/fa";
+// import { GoMarkGithub } from "react-icons/go";
+// import { AiFillInstagram } from "react-icons/ai";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import './footer.css'
 // import logo from './images/logo.jpg';
 import logo2 from './images/nutri-logo.jpg';
 
@@ -15,8 +15,37 @@ class Footer extends React.Component {
     return (
 
       <>
+<footer>
+
+        <h3 class="title-logo--footer">Follow<span>Us</span></h3>
+
+        <nav class="footer-nav">
+            <ul class="contact-us">
+                <li class="footer-nav-item"><span>E-mail address:</span> jostainable2021@JOstainable.com</li>
+                <br></br>
+                <br></br>
+
+                <li class="footer-nav-item"><span>Phone Number:</span> +962 687 457 992</li>
+                <br></br>
+                <br></br>
 
 
+                <li class="footer-nav-item"><span>Loction:</span> Amman - Jordan</li>
+            </ul>
+        </nav>
+        <div class="social-bar">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-instagram"></a>
+
+        </div>
+        <div class="clear"></div>
+        <p class="copy-rights">
+            Copyright JOstainable &copy; 2010-2021 All rights reserved.
+        </p>
+        </footer>
+    </>
+/* 
         <Navbar style={{ maxHeight: '120px', position: 'relative', bottom: '0%', width: '100%' }} collapseOnSelect expand="lg" bg="dark" variant="dark">
 
 
@@ -76,12 +105,13 @@ class Footer extends React.Component {
               </Nav.Link>
             </Nav>
           </Container>
-        </Navbar>
-      </>
-    )
+        </Navbar> */
+        
+
+ )
 
 
   }
 }
 
-export default Footer
+export default Footer;
