@@ -9,38 +9,13 @@ import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import './Home.css';
 import hero from './images/EATTOLIVE.jpeg'
-
-
-// import HealthyRecipes from './src/images/HealthyRecipes.jpg' // relative path to image 
-
-// import logo from './logo.png' // relative path to image 
-
-// class Nav extends Component { 
-//     render() { 
-//         return ( 
-//             <img src={logo} alt={"logo"}/> 
-//         )  
-//     }
-// }
-
-const arr = [
-    'Primary',
-    'Secondary',
-    'Success',
-    'Danger',
-    'Warning',
-    'Info',
-    'Light',
-    'Dark',
-]
-
 class Home extends React.Component {
 
 
     render() {
         return (
             <section>
-                <img height="400px" width="1300" src={hero}></img>
+                <img height="400px" width="1300" src={hero} alt="hero"></img>
 
 
                 <Button style={{ marginTop: '70px' }} class="btn"> GET STARTED </Button>
@@ -114,7 +89,7 @@ class Home extends React.Component {
                 <div>
                     <h3 className='healthyTips'> Health Tips for Healthy Living</h3>
 
-                    <CardGroup class="container">
+                    <CardGroup className="container">
                         <Row>
                             <Col xs={6} md={4}>
                                 <Card
