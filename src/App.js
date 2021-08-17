@@ -16,6 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FoodAPI from './FoodAPI';
 import Programs from './components/Programs';
 import Services from './components/Services'
+import AboutUs from './components/AboutUs'
 
 class App extends React.Component {
   render() {
@@ -63,9 +64,9 @@ class App extends React.Component {
                 <FoodAPI />
               </Route>
 
-              {/* <Route exact path="/aboutUs">
+              <Route exact path="/aboutUs">
                 <AboutUs/>
-              </Route> */}
+              </Route>
             </Switch>
             <Footer />
           </IsLoadingAndError>

@@ -1,16 +1,22 @@
-.container {
+ /* .container {
     position: relative;
+    float: inline-end;
+    background-color: rgb(116, 218, 116) */
+     
      /* width: 100%;
     max-width: 400px;  */
-    text-align: center;
+    /* text-align: center;
     padding: 10px 10px;
     
 
-  }
+  } 
+ 
+ 
+  
   
   
  
-  
+/*   
   .container .btn {
     position: absolute;
     top: 50%;
@@ -29,11 +35,11 @@
   
   .container .btn:hover {
     background-color: black;
-  }
+  } */
 
 
 
-.fixed{
+/* .fixed{
   position: absolute;
 
-}
+} */
