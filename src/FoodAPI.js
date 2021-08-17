@@ -5,22 +5,24 @@ import { withAuth0 } from '@auth0/auth0-react';
 import { Form, Button } from "react-bootstrap";
 import RecipeFormModal from "./components/RecipeFormModal"
 import UpdatedRecipe from "./components/UpdatedRecipe"
+// import FavRecipes from "./components/FavRecipes"
 class FoodAPI extends React.Component {
     state = {
         recipes: [],
         calories: [],
+        favRecipes: [],
         unit: 'kcal',
         ownerEmail: this.props.auth0.user.email,
         displayAddModal: false,
         updateRecipeObj: {},
         showUpdateModal: false,
     };
-    handelDisplayModal = () => {
-        this.setState({ displayAddModal: true });
-    }
-    handelUpdatedModal = (item) => {
-        this.setState({ showUpdateModal: true, updateBookObj: item });
-    }
+    // handelDisplayModal = () => {
+    //     this.setState({ displayAddModal: true });
+    // }
+    // handelUpdatedModal = (item) => {
+    //     this.setState({ showUpdateModal: true, updateBookObj: item });
+    // }
 
 
     recipeSearching = e => {
@@ -36,19 +38,19 @@ class FoodAPI extends React.Component {
                 })
             })
     }
-    addRecipe = (e) => {
-        e.preventDefault();
 
+    addRecipe = (index) => {
+        console.log(this.state.recipes[index].recipe.label)
         const body = {
-            ownerEmail: this.props.auth0.user.email, // we are getting the email of the user from auth0
-            label: e.target.label.value,
-            image: e.target.image.value,
-            calories: e.target.calories.value,
-            totalWeight: e.target.totalWeight.value,
-            url: e.target.url.value,
+            ownerEmail: this.props.auth0.user.email,
+            label: this.state.recipes[index].recipe.label,
+            image: this.state.recipes[index].recipe.image,
+            calories: this.state.recipes[index].recipe.calories,
+            totalWeight: this.state.recipes[index].recipe.totalWeight,
+            url: this.state.recipes[index].recipe.url,
         };
         axios.post(`http://localhost:3030/recipe`, body).then(axiosResponse => {
-            // console.log(axiosResponse.data);
+            console.log(axiosResponse.data);
             this.state.recipes.push(axiosResponse.data);
             this.setState({
                 recipes: this.state.recipes
@@ -57,57 +59,68 @@ class FoodAPI extends React.Component {
             console.log(this.state.recipes);
 
         }).catch(error => alert(error));
-        this.setState({ displayAddModal: false });
     }
-    deleteRecipe = (index) => {
-        axios.delete(
-            `http://localhost:3030/recipe/${index}`
+    getRecipes = async () => {
+        await axios.get(
+            `http://localhost:3030/recipes?email=${this.state.ownerEmail}`
         ).then(axiosResponse => {
-            if (axiosResponse) {
-                const deletedRecipe = this.state.recipes.filter(recipe => recipe._id !== index);
-                this.setState({
-                    recipe: deletedRecipe,
-                });
-            }
-        }).catch(error => alert(error));
-    }
-
-    UpdateRecipe = ((e) => {
-        e.preventDefault();
-        const recipeId = this.state.updateRecipeObj._id;
-        const body = {
-            label: e.target.label.value,
-            image: e.target.image.value,
-            calories: e.target.calories.value,
-            totalWeight: e.target.totalWeight.value,
-            url: e.target.url.value,
-        };
-
-        axios.put(`http://localhost:3030/recipe/${recipeId}`, body).then((axiosResponse) => {
-            console.log('updated Recipe Data:  ', axiosResponse.data);
-
-
-            const updatedRecipeArr = this.state.recipes.map(recipe => {
-
-                if (recipe._id === recipeId) {
-                    recipe.label = axiosResponse.data.label;
-                    recipe.image = axiosResponse.data.image;
-                    recipe.calories = axiosResponse.data.calories;
-                    recipe.totalWeight = axiosResponse.data.totalWeight;
-                    recipe.url = axiosResponse.data.url;
-
-                    return recipe;
-                }
-                return recipe;
-
+            this.setState({
+                favRecipes: axiosResponse.data
             });
-            this.setState({ recipes: updatedRecipeArr })
-            this.handelUpdatedModal({})
-            this.setState({ showUpdateModal: false });
-
-
+            console.log(this.favRecipes);
         }).catch(error => alert(error));
-    });
+    };
+
+
+    // deleteRecipe = (index) => {
+    //     axios.delete(
+    //         `http://localhost:3030/recipe/${index}`
+    //     ).then(axiosResponse => {
+    //         if (axiosResponse) {
+    //             const deletedRecipe = this.state.recipes.filter(recipe => recipe._id !== index);
+    //             this.setState({
+    //                 recipe: deletedRecipe,
+    //             });
+    //         }
+    //     }).catch(error => alert(error));
+    // }
+
+    // UpdateRecipe = ((e) => {
+    //     e.preventDefault();
+    //     const recipeId = this.state.updateRecipeObj._id;
+    //     const body = {
+    //         label: e.target.label.value,
+    //         image: e.target.image.value,
+    //         calories: e.target.calories.value,
+    //         totalWeight: e.target.totalWeight.value,
+    //         url: e.target.url.value,
+    //     };
+
+    //     axios.put(`http://localhost:3030/recipe/${recipeId}`, body).then((axiosResponse) => {
+    //         console.log('updated Recipe Data:  ', axiosResponse.data);
+
+
+    //         const updatedRecipeArr = this.state.recipes.map(recipe => {
+
+    //             if (recipe._id === recipeId) {
+    //                 recipe.label = axiosResponse.data.label;
+    //                 recipe.image = axiosResponse.data.image;
+    //                 recipe.calories = axiosResponse.data.calories;
+    //                 recipe.totalWeight = axiosResponse.data.totalWeight;
+    //                 recipe.url = axiosResponse.data.url;
+
+    //                 return recipe;
+    //             }
+    //             return recipe;
+
+    //         });
+    //         this.setState({ recipes: updatedRecipeArr })
+    //         this.handelUpdatedModal({})
+    //         this.setState({ showUpdateModal: false });
+
+
+    //     }).catch(error => alert(error));
+    // });
 
 
 
@@ -128,9 +141,16 @@ class FoodAPI extends React.Component {
     render() {
         return (
             <div>
-                <Button variant="secondary" onClick={() => this.handelDisplayModal()}>Add a Recipe</Button>
+                {/* {this.state.favRecipes.map((recipe, index) => {
+                    return (
+                        <FavRecipes
+                            recipe={recipe}
+                            key={index} />
+                    )
+                })} */}
+                {/* <Button variant="secondary" onClick={() => this.handelDisplayModal()}>Add a Recipe</Button> */}
 
-                <RecipeFormModal
+                {/* <RecipeFormModal
                     show={this.state.displayAddModal}
                     handelDisplayModal={this.handelDisplayModal}
                     addRecipe={this.addRecipe}
@@ -142,10 +162,10 @@ class FoodAPI extends React.Component {
                         UpdateRecipe={this.UpdateRecipe}
                         updateRecipeObj={this.state.updateRecipeObj}
                     />
-                }
+                } */}
 
-                {this.state.recipes.map((recipe, id) => (
-                    <Card key={id} style={{ width: '20rem', float: 'right', margin: '2rem 4rem 1rem 2rem' }} className="text-center mb-3 bg-dark">
+                {this.state.recipes.map((recipe, index) => (
+                    <Card key={index} style={{ width: '20rem', float: 'right', margin: '2rem 4rem 1rem 2rem' }} className="text-center mb-3 bg-dark">
                         <Card.Title className="p-3 text-white">Name: {recipe.recipe.label}</Card.Title>
                         <ListGroupItem>
                             <Card.Img src={recipe.recipe.image} fluid="true" alt="No image for this movie" />
@@ -179,16 +199,11 @@ class FoodAPI extends React.Component {
                                     {recipe.recipe.dietLabels}
                                 </span>
                             </ListGroupItem>
-                            <Button variant="outline-danger" style={{ marginLeft: '10px' }} onClick={() => this.addRecipe(recipe._id)}>Add to favorite</Button>
+                            <Button variant="outline-danger" style={{ marginLeft: '10px' }} onClick={() => this.addRecipe(index)}>Add to favorite</Button>
 
                         </ListGroup>
                     </Card>
                 ))}
-                Calories:{' '}
-                <span style={{ color: 'black' }}>
-                    {(this.state.calories + this.state.unit)}
-                </span>
-                <img src={this.state.analyze} alt="" />
                 <Form onSubmit={this.recipeSearching}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Search</Form.Label>
@@ -207,6 +222,12 @@ class FoodAPI extends React.Component {
                         Submit
                     </Button> */}
                 </Form>
+                Calories:{' '}
+                <span style={{ color: 'black' }}>
+                    {(this.state.calories + this.state.unit)}
+                </span>
+                <img src={this.state.analyze} alt="" />
+
             </div>
         )
     }

@@ -16,6 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import FoodAPI from './FoodAPI';
 import Programs from './components/Programs';
 import Services from './components/Services'
+import FavRecipes from './components/FavRecipes'
 
 class App extends React.Component {
   render() {
@@ -48,6 +49,7 @@ class App extends React.Component {
                   <>
                     <Logout />
                     <Profile />
+                    <FavRecipes />
                   </>
                 )}
               </Route>
@@ -61,6 +63,9 @@ class App extends React.Component {
               </Route>
               <Route exact path="/recipes">
                 <FoodAPI />
+              </Route>
+              <Route exact path="/favorite">
+                <FavRecipes />
               </Route>
 
               {/* <Route exact path="/aboutUs">
