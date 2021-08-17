@@ -14,7 +14,8 @@ import Profile from './components/Profile'
 import Home from './components/Home'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FoodAPI from './FoodAPI';
-
+import Programs from './components/Programs';
+import Services from './components/Services'
 
 class App extends React.Component {
   render() {
@@ -49,14 +50,14 @@ class App extends React.Component {
                   </>
                 )}
               </Route>
-              {/* <Route exact path="/programs">
-                <Programs/>
+              <Route exact path="/programs">
+                <Programs />
               </Route>
-            
+
               <Route exact path="/services">
-                <Services/>
+                <Services />
               </Route>
-              <Route exact path="/aboutUs">
+              {/* <Route exact path="/aboutUs">
                 <AboutUs/>
               </Route> */}
             </Switch>
