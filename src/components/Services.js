@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button, Modal, Form } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Modal, Form,CloseButton} from 'react-bootstrap';
 // import './service.css';
 
 <style>
@@ -132,8 +132,13 @@ class Services extends React.Component {
           onHide={this.state.handleClose}
           backdrop="static"
           keyboard={false}>
-          <Modal.Header closeButton>
+          <Modal.Header >
             <Modal.Title >Nutritions Consulting</Modal.Title>
+           
+            <CloseButton onClick={this.handleClose}>
+         close
+        </CloseButton>
+            
           </Modal.Header>
           <Modal.Body>
             <Form.Control size="lg" type="text" placeholder="Name" />
