@@ -22,8 +22,8 @@ class AboutUs extends React.Component {
                             <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front">
-                                        <Card.Img variant="top" src={doaaa} height="350px" width="300px" />
-                                        <Card.Title style={{ fontFamily: 'Patrick Hand', fontSize: 'xx-large', height: '60px', backgroundColor: 'rgb(255, 246, 230)' }} >Doa'a K.Daban </Card.Title>
+                                        <Card.Img variant="top" src={abdelqader} height="350px" width="300px" />
+                                        <Card.Title style={{ fontFamily: 'Patrick Hand', fontSize: 'xx-large', height: '60px', backgroundColor: 'rgb(255, 246, 230)' }} >Abdelqader Al-Omari</Card.Title>
 
                                     </div>
                                     <div class="flip-card-back">
@@ -31,7 +31,7 @@ class AboutUs extends React.Component {
                                         <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)', height: '350px' }}>
 
                                             <Card.Text style={{ fontFamily: 'Patrick Hand', fontSize: '20px' }} >
-                                                Doaa graduated from the University of Jordan with Bachelor's degree in Computer engineering, I have an experience in Network Engineering and security, And now one of my goals is to develop my tech skills and become a professional software developer.
+                                                Software Developer - studied mechanical Engineering at the University of Jordan
                                             </Card.Text>
 
                                         </Card.Body>
@@ -43,55 +43,112 @@ class AboutUs extends React.Component {
 
                         </Card>
                     </Col>
+                    <Row>
+                        <Col xs={6} md={3}>
+                            <Card class="card" >
 
-                    <Col xs={6} md={3}>
-                        <Card>
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <Card.Img variant="top" src={anas} height="350px" width="300px" />
-                                        <Card.Title style={{ fontFamily: 'Patrick Hand', height: '60px', fontSize: 'xx-large', backgroundColor: 'rgb(255, 246, 230)' }}> Anas Dalal'ah</Card.Title>
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <Card.Img variant="top" src={hatem} height="350px" width="300px" />
+                                            <Card.Title style={{ fontFamily: 'Patrick Hand', fontSize: 'xx-large', height: '60px', backgroundColor: 'rgb(255, 246, 230)' }} >Hatem Sallam</Card.Title>
 
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)', height: '350px' }}>
-                                            <Card.Text style={{ fontFamily: 'Patrick Hand', fontSize: 'x-large' }}>
-                                                This is a wider card with supporting text below as a natural lead-in to
-                                                additional content. This content is a little bit longer.
-                                            </Card.Text>
-                                        </Card.Body>
+                                        </div>
+                                        <div class="flip-card-back">
 
-                                    </div>
-                                </div>
-                            </div>
+                                            <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)', height: '350px' }}>
 
-                        </Card>
-                    </Col>
+                                                <Card.Text style={{ fontFamily: 'Patrick Hand', fontSize: '20px' }} >
+                                                    Software Developer - studied civil engineering
+                                                </Card.Text>
 
+                                            </Card.Body>
 
-                    <Col xs={6} md={3}>
-                        <Card >
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <Card.Img variant="top" src={ghaida} height="350px" width="300px" />
-                                        <Card.Title style={{ fontFamily: 'Patrick Hand', fontSize: 'xx-large', height: '60px', backgroundColor: 'rgb(255, 246, 230)' }}> Ghaida K.Gharaibeh</Card.Title>
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)', height: '350px' }}>
-                                            <Card.Text style={{ fontFamily: 'Patrick Hand', fontSize: 'x-large' }}>
-                                                This is a wider card with supporting text below as a natural lead-in to
-                                                additional content. This content is a little bit longer.
-                                            </Card.Text>
-                                        </Card.Body>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        </Card>
-                    </Col>
 
-                    {/* 
+                            </Card>
+                        </Col>
+
+
+                        <Col xs={6} md={3}>
+                            <Card class="card" >
+
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <Card.Img variant="top" src={doaaa} height="350px" width="300px" />
+                                            <Card.Title style={{ fontFamily: 'Patrick Hand', fontSize: 'xx-large', height: '60px', backgroundColor: 'rgb(255, 246, 230)' }} >Doa'a K.Daban </Card.Title>
+
+                                        </div>
+                                        <div class="flip-card-back">
+
+                                            <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)', height: '350px' }}>
+
+                                                <Card.Text style={{ fontFamily: 'Patrick Hand', fontSize: '20px' }} >
+                                                    Software Developer - studied civil engineering at the University of Jordan
+                                                </Card.Text>
+
+                                            </Card.Body>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </Card>
+                        </Col>
+
+
+                        <Col xs={6} md={3}>
+                            <Card>
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <Card.Img variant="top" src={anas} height="350px" width="300px" />
+                                            <Card.Title style={{ fontFamily: 'Patrick Hand', height: '60px', fontSize: 'xx-large', backgroundColor: 'rgb(255, 246, 230)' }}> Anas Dalal'ah</Card.Title>
+
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)', height: '350px' }}>
+                                                <Card.Text style={{ fontFamily: 'Patrick Hand', fontSize: 'x-large' }}>
+                                                    Electrical Engineer
+                                                </Card.Text>
+                                            </Card.Body>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </Card>
+                        </Col>
+
+
+                        <Col xs={6} md={3}>
+                            <Card >
+                                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                            <Card.Img variant="top" src={ghaida} height="350px" width="300px" />
+                                            <Card.Title style={{ fontFamily: 'Patrick Hand', fontSize: 'xx-large', height: '60px', backgroundColor: 'rgb(255, 246, 230)' }}> Ghaida K.Gharaibeh</Card.Title>
+                                        </div>
+                                        <div class="flip-card-back">
+                                            <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)', height: '350px' }}>
+                                                <Card.Text style={{ fontFamily: 'Patrick Hand', fontSize: 'x-large' }}>
+                                                    This is a wider card with supporting text below as a natural lead-in to
+                                                    additional content. This content is a little bit longer.
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </Card>
+                        </Col>
+
+                        {/* 
             <br></br> 
                        <Col xs={6} md={3}>
               <Card >
@@ -113,7 +170,7 @@ class AboutUs extends React.Component {
 </div>
               </Card>
             </Col> */}
-                    {/* <br></br> 
+                        {/* <br></br> 
              <Col xs={6} md={4}>
               <Card >
               
@@ -134,13 +191,13 @@ class AboutUs extends React.Component {
 
 
 
-                </Row>
+                    </Row>
 
 
-                {/* </Container> */}
+                    {/* </Container> */}
 
 
-                {/* <div class="container">
+                    {/* <div class="container">
   <div class="card">
     <div class="box">
       <div class="content">
@@ -158,8 +215,8 @@ class AboutUs extends React.Component {
             </>
 
 
-        )
+                )
     }
 }
 
-export default AboutUs;
+                export default AboutUs;

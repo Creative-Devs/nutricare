@@ -18,7 +18,7 @@ class Home extends React.Component {
                 <img height="500px" width="1300" src={hero} alt="hero"></img>
 
 
-                <Button style={{ marginTop: '70px' }} class="btn" href="/recipes"> Get Healthy Recipes </Button>
+                <Button style={{ marginTop: '50px', marginLeft: '245px' }} class="btn" href="/recipes"> Get Healthy Recipes </Button>
 
 
                 <Container>
