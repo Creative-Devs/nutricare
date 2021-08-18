@@ -57,30 +57,8 @@ class FoodAPI extends React.Component {
 
         }).catch(error => alert(error));
     }
-    // getRecipes = async () => {
-    //     await axios.get(
-    //         `http://localhost:3030/recipes?email=${this.state.ownerEmail}`
-    //     ).then(axiosResponse => {
-    //         this.setState({
-    //             favRecipes: axiosResponse.data
-    //         });
-    //         console.log(this.favRecipes);
-    //     }).catch(error => alert(error));
-    // };
 
 
-    // deleteRecipe = (index) => {
-    //     axios.delete(
-    //         `http://localhost:3030/recipe/${index}`
-    //     ).then(axiosResponse => {
-    //         if (axiosResponse) {
-    //             const deletedRecipe = this.state.recipes.filter(recipe => recipe._id !== index);
-    //             this.setState({
-    //                 recipe: deletedRecipe,
-    //             });
-    //         }
-    //     }).catch(error => alert(error));
-    // }
 
     // UpdateRecipe = ((e) => {
     //     e.preventDefault();
@@ -140,12 +118,12 @@ class FoodAPI extends React.Component {
             <div className='foodapi' style={{ backgroundColor: 'RGB(233, 214, 233)' }}>
                 <h1 className='headerclass' style={{ color: '#8D2828', fontFamily: 'Patrick Hand, cursive' }}>Healthy Recipes</h1>
 
-                <Card style={{ marginLeft: '200px', marginRight: '200px', backgroundColor: 'rgb(241, 221, 221)' }}>
-                    <Form className="recipeform" style={{ fontSize: '25px', width: "65%", marginLeft: "15%" }}
+                <Card style={{ marginLeft: '100px', marginRight: '100px', backgroundColor: 'rgb(241, 221, 221)' }}>
+                    <Form className="recipeform" style={{ width: "65%", marginLeft: "15%" }}
                         onSubmit={this.recipeSearching}>
-                        <Button style={{ marginLeft: '625px', position: 'relative', top: '38px', backgroundColor: '#8D2828' }} className="formbutton" type='submit'>Search</Button>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Control placeholder='Search For Healthy Recipes' type="text" name="search" />
+                        <Button style={{ height: '56px', marginLeft: '625px', position: 'relative', top: '86px', left: '27%', backgroundColor: '#8D2828', fontSize: "20px", fontFamily: 'Helvetica' }} className="formbutton" type='submit'>Search</Button>
+                        <Form.Group className="mb-5" controlId="formBasicEmail">
+                            <Form.Control style={{ height: '60px' }} placeholder='Search For Healthy Recipes' type="text" name="search" />
                         </Form.Group>
 
                     </Form>
@@ -153,14 +131,14 @@ class FoodAPI extends React.Component {
 
                 {this.state.showCards &&
                     this.state.recipes.map((recipe, index) => (
-                        <Card key={index} style={{ width: '20rem', float: 'right', margin: '2rem 4rem 1rem 2rem', backgroundColor: '#8D2828' }} >
+                        <Card key={index} style={{ width: '20rem', float: 'right', margin: '8rem 4rem 1rem 2rem', backgroundColor: '#8D2828' }} >
                             <Card.Title className="p-3 text-white" >Name: {recipe.recipe.label}</Card.Title>
                             <ListGroupItem>
                                 <Card.Img src={recipe.recipe.image} fluid="true" alt="No image for this movie" />
                             </ListGroupItem>
                             <Card.Body style={{ maxHeight: '10rem', backgroundColor: '#E3DFC8' }}>
                                 Calories:{' '}
-                                {Math.round(recipe.recipe.calories)}
+                                {Math.round(recipe.recipe.calories) + ' kcal'}
                             </Card.Body>
                             <ListGroup >
                                 <ListGroupItem style={{ backgroundColor: '#E3DFC8' }}>
@@ -168,17 +146,16 @@ class FoodAPI extends React.Component {
                                     <span>
                                         {Math.round(recipe.recipe.totalWeight) + ' g'}
                                     </span>
-                                </ListGroupItem>
-                                {/* <ListGroupItem>
-                                Recipe Details:{' '}
-                                <span>
-                                    {recipe.recipe.url}
-                                </span>
-                            </ListGroupItem> */}
+                                </ListGroupItem >
                                 <ListGroupItem style={{ backgroundColor: '#E3DFC8' }}>
-                                    Source:{' '}
+                                    {/* <span>
+                                        <a href={recipe.recipe.url} class="btn btn-primary">Details</a>
+                                    </span> */}
+                                </ListGroupItem>
+                                <ListGroupItem style={{ backgroundColor: '#E3DFC8' }}>
+                                    URL:{' '}
                                     <span >
-                                        {recipe.recipe.source}
+                                        <a href={recipe.recipe.url}>Details</a>
                                     </span>
                                 </ListGroupItem>
                                 {/* <ListGroupItem>
@@ -187,28 +164,11 @@ class FoodAPI extends React.Component {
                                     {recipe.recipe.dietLabels}
                                 </span>
                             </ListGroupItem> */}
-                                <Button style={{ backgroundColor: '#8D2828' }} onClick={() => this.addRecipe(index)}>Add to favorite</Button>
+                                <Button style={{ backgroundColor: '#8D2828', marginTop: '8rem', marginLeft: '4rem' }} onClick={() => this.addRecipe(index)}>Love it</Button>
 
                             </ListGroup>
                         </Card>
                     ))}
-
-                {/* <span style={{ color: 'black' }}> */}
-                {/* {(this.state.calories + this.state.unit)} */}
-                {/* </span> */}
-                {/* <img src={this.state.analyze} alt="" /> */}
-
-                {/* <Form onSubmit={this.calorieCalculator}>
-            <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Calculate Calories</Form.Label>
-                    Calories:{' '}
-                    <Form.Control type="text" name="calories" />
-                </Form.Group>
-              
-            </Form> */}
 
                 <style>
                     @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');

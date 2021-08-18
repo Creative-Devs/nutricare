@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button, Modal, Form } from 'react-bootstrap';
 import './service.css';
+import axios from 'axios'
+import service from './images/Care.png'
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
@@ -27,6 +29,22 @@ class Services extends React.Component {
     });
   };
 
+  calorieCalculator = e => {
+    e.preventDefault();
+    const caloriesSearch = e.target.calories.value;
+    const url = `https://api.edamam.com/api/nutrition-data?app_id=cf3d9a5c&app_key=792374f75d59c4ae14eb1a0e5e280fab&nutrition-type=cooking&ingr=${caloriesSearch}`;
+    axios
+      .get(url)
+      .then(result => {
+        console.log(result.data)
+        alert(`the number of calories is ${result.data.calories} kcal`)
+        this.setState({
+          calories: result.data.calories,
+        })
+      })
+  }
+
+
   render() {
     return (
       <main style={{ backgroundColor: 'beige' }}>
@@ -34,21 +52,19 @@ class Services extends React.Component {
         <Container style={{ marginTop: '0px' }}>
 
           <Card className="bg-dark text-white" >
-            <Card.Img height="300px" src="https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="Card image" />
+            <Card.Img height="300px" src={service} alt="Card image" />
             <Card.ImgOverlay>
               <Card.Title style={{ textAlign: 'center', fontSize: "xxx-large", fontFamily: 'Patrick Hand', color: 'black' }}>Programs</Card.Title>
 
-              <Card.Text style={{ padding: '10px', fontFamily: 'Patrick Hand', fontSize: '25px', fontWeight: 'bold', color: 'black' }} >
-                In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without
-                In publishing and grommonly used to demonstrate the visual form of a document or a typeface without
-
+              <Card.Text style={{ padding: '5px', fontFamily: 'Patrick Hand', fontSize: '25px', fontWeight: 'bold', color: 'black' }} >
+                {/* We provide you with Diet programs for what you need */}
               </Card.Text>
 
 
 
               <Card.Text>
-                <Button class="button" href="/programs" style={{ float: 'center', width: "200px", fontSize: "15px", borderRadius: '8px', border: 'none', height: '50px', backgroundColor: 'rgb(116, 218, 116)', textAlign: 'center', color: 'white' }} >
-                  Click to see the Programs
+                <Button class="button" href="/programs" style={{ width: "200px", fontSize: "14px", borderRadius: '8px', border: 'none', height: '50px', backgroundColor: '#444', textAlign: 'center', color: 'white', marginTop: '10rem', fontFamily: 'Times new Roman' }} >
+                  Show Programs
                 </Button>
               </Card.Text>
             </Card.ImgOverlay>
@@ -64,19 +80,16 @@ class Services extends React.Component {
           <Card className="text-center">
             <Card.Header style={{ fontSize: "xxx-large", fontFamily: 'Patrick Hand', backgroundColor: 'rgb(189,176,160)' }}>Calculate Calories</Card.Header>
             <Card.Body style={{ backgroundColor: 'rgb(255,246,230)' }} >
-              <Card.Title style={{ padding: '20px', fontFamily: 'Patrick Hand', fontSize: 'xx-large' }} >Enter to calculate</Card.Title>
+              <Card.Title style={{ padding: '20px', fontFamily: 'Patrick Hand', fontSize: 'xx-large' }} >Enter to calculate Calories</Card.Title>
               <Card.Text>
-                <div class="input-group">
-                  <form>
-                    <input style={{ width: '900px', marginLeft: '90px' }} type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                      aria-describedby="search-addon" />
-                    <button class="button" type="button" style={{
-                      marginLeft: '80px', width: '200px', height: '50px', borderRadius: '8px', backgroundColor: 'rgb(116, 218, 116)', border: 'none'
-                      , marginTop: '9px', color: 'white'
-                    }}>search</button>
+                <Form className="caloriesform" style={{ width: "65%", marginLeft: "15%" }}
+                  onSubmit={this.calorieCalculator}>
+                  <Button style={{ height: '56px', marginLeft: '625px', position: 'relative', top: '86px', left: '27%', backgroundColor: '#8D2828', fontSize: "20px", fontFamily: 'Helvetica' }} className="formbutton" type='submit'>Calculate</Button>
+                  <Form.Group className="mb-5" controlId="formBasicEmail">
+                    <Form.Control style={{ height: '60px' }} placeholder='Show Calories number' type="text" name="calories" />
+                  </Form.Group>
 
-                  </form>
-                </div>
+                </Form>
 
 
               </Card.Text>

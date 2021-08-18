@@ -35,7 +35,6 @@ class App extends React.Component {
                   <>
                     <Logout />
                     <Home />
-                    <FavRecipes />
                   </>
                 )}
                 {!isAuthenticated && (
@@ -50,7 +49,6 @@ class App extends React.Component {
                   <>
                     <Logout />
                     <Profile />
-                    <FavRecipes />
                   </>
                 )}
                 {!isAuthenticated && (
@@ -73,7 +71,6 @@ class App extends React.Component {
                   <>
                     <Logout />
                     <FoodAPI />
-                    <FavRecipes />
                   </>
                 )}
                 {!isAuthenticated && (

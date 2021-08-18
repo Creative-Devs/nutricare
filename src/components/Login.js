@@ -14,8 +14,8 @@ function Login() {
 
 
         <Card >
-            <Card.Body style={{ marginLeft: '1200px' }}>
-                <button style={{ position: 'absolute', bottom: '55px' }} onClick={loginWithRedirect}>Log in</button>
+            <Card.Body style={{ marginLeft: '1160px' }}>
+                <button style={{ position: 'absolute', bottom: '5.7rem' }} onClick={loginWithRedirect}>Log in</button>
             </Card.Body>
         </Card>
 

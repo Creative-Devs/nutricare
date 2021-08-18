@@ -10,7 +10,7 @@ export default class Header extends React.Component {
                     <nav style={{ height: '130px' }} class="navbar navbar-expand-lg navbar-light bg-light">
                         <div class="container-fluid">
                             <img src={logo} style={{ width: '120px', height: '120px' }} />
-                            <a style={{ fontSize: '48px', color: 'rgb(235, 74, 11)' }} class="navbar-brand" href="/">
+                            <a style={{ fontSize: '44px', color: 'rgb(235, 74, 11)' }} class="navbar-brand" href="/">
                                 NutriCare
                             </a>
                             <button
