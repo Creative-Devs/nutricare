@@ -196,7 +196,7 @@ class Programs extends React.Component {
                 </CardGroup>
 
                 <>
-
+{/* 
                     <FloatingLabel controlId="floatingSelect" label="Select your Program">
                         <Form.Select id='SelectPrograms' aria-label="Floating label select example" onChange={this.dataHandle} >
                             <option value="">All Programs</option>
@@ -204,7 +204,7 @@ class Programs extends React.Component {
                             <option value="Weight Stability Program">Weight Stability Programs</option>
                             <option value="Foods to gain weight">Weight Gain Programs</option>
                         </Form.Select>
-                    </FloatingLabel>
+                    </FloatingLabel> */}
 
 
 

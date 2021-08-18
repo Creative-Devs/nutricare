@@ -7,6 +7,9 @@ import { HandIndexFill } from "react-bootstrap-icons";
 // import RecipeFormModal from "./components/RecipeFormModal"
 // import UpdatedRecipe from "./components/UpdatedRecipe"
 // import FavRecipes from "./components/FavRecipes"
+import swal from 'sweetalert';
+
+
 class FoodAPI extends React.Component {
     state = {
         recipes: [],
@@ -56,6 +59,13 @@ class FoodAPI extends React.Component {
             console.log(axiosResponse.data);
 
         }).catch(error => alert(error));
+
+        swal({
+            title: "Added To Your Favorite",
+            // text: "You clicked the button!",
+            icon: "success",
+            button: "Aww yiss!",
+          });
     }
 
 
@@ -132,13 +142,13 @@ class FoodAPI extends React.Component {
                 {this.state.showCards &&
                     this.state.recipes.map((recipe, index) => (
                         <Card key={index} style={{ width: '20rem', float: 'right', margin: '8rem 4rem 1rem 2rem', backgroundColor: '#8D2828' }} >
-                            <Card.Title className="p-3 text-white" >Name: {recipe.recipe.label}</Card.Title>
+                            <Card.Title className="p-3 text-white" > {recipe.recipe.label}</Card.Title>
                             <ListGroupItem>
                                 <Card.Img src={recipe.recipe.image} fluid="true" alt="No image for this movie" />
                             </ListGroupItem>
                             <Card.Body style={{ maxHeight: '10rem', backgroundColor: '#E3DFC8' }}>
                                 Calories:{' '}
-                                {Math.round(recipe.recipe.calories) + ' kcal'}
+                                {Math.round(recipe.recipe.calories) + ' cal'}
                             </Card.Body>
                             <ListGroup >
                                 <ListGroupItem style={{ backgroundColor: '#E3DFC8' }}>
@@ -147,13 +157,13 @@ class FoodAPI extends React.Component {
                                         {Math.round(recipe.recipe.totalWeight) + ' g'}
                                     </span>
                                 </ListGroupItem >
-                                <ListGroupItem style={{ backgroundColor: '#E3DFC8' }}>
+                                {/* <ListGroupItem style={{ backgroundColor: '#E3DFC8' }}> */}
                                     {/* <span>
                                         <a href={recipe.recipe.url} class="btn btn-primary">Details</a>
                                     </span> */}
-                                </ListGroupItem>
+                                {/* </ListGroupItem> */}
                                 <ListGroupItem style={{ backgroundColor: '#E3DFC8' }}>
-                                    URL:{' '}
+                                    Get More {' '}
                                     <span >
                                         <a href={recipe.recipe.url}>Details</a>
                                     </span>

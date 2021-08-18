@@ -8,17 +8,17 @@ import Container from 'react-bootstrap/Container';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import './Home.css';
-import hero from './images/EATTOLIVE.jpeg'
+import NUTR from './images/NUTR.jpeg'
 class Home extends React.Component {
 
 
     render() {
         return (
             <section>
-                <img height="500px" width="1300" src={hero} alt="hero"></img>
+                <img height="600px" width="1300" src={NUTR} alt="hero"></img>
 
 
-                <Button style={{ marginTop: '50px', marginLeft: '245px' }} class="btn" href="/recipes"> Get Healthy Recipes </Button>
+                <Button style={{ marginTop: '180px', marginLeft: '20px' }} className="btn" href="/recipes"> Get Healthy Recipes </Button>
 
 
                 <Container>
@@ -93,8 +93,7 @@ class Home extends React.Component {
                         <Row>
                             <Col xs={6} md={4}>
                                 <Card
-                                    //                      bg={}
-                                    // text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
+                                  
                                     className="cardClase" border="light" style={{ width: '22rem' }} >
 
                                     <Card.Img height="360px" width="300" variant="top" src="https://images.pexels.com/photos/1105166/pexels-photo-1105166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
@@ -102,7 +101,7 @@ class Home extends React.Component {
                                         <Card.Title className='cardTitle'>Diet and Nutrition</Card.Title>
                                         <br />
                                         <Card.Text className='cardText'>
-                                            1- Eat three healthy meals a day (breakfast, lunch, and dinner).
+                                            1- Eat three healthy meals a day (breakfast, lunch, and din r).
                                             <br />
                                             <br />
 

@@ -10,14 +10,14 @@ import {
 import { withAuth0 } from '@auth0/auth0-react';
 import Login from './components/Login'
 import Logout from './components/Logout'
-import Profile from './components/Profile'
+// import Profile from './components/Profile'
 import Home from './components/Home'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FoodAPI from './FoodAPI';
 import Programs from './components/Programs';
 import Services from './components/Services'
 import FavRecipes from './components/FavRecipes'
-// import AboutUs from './components/AboutUs'
+import AboutUs from './components/AboutUs'
 
 class App extends React.Component {
   render() {
@@ -48,13 +48,13 @@ class App extends React.Component {
                 {isAuthenticated && (
                   <>
                     <Logout />
-                    <Profile />
+                    {/* <Profile /> */}
                   </>
                 )}
                 {!isAuthenticated && (
                   <>
                     <Login />
-                    <Profile />
+                    {/* <Profile /> */}
                   </>
                 )}
               </Route>
@@ -90,7 +90,7 @@ class App extends React.Component {
               </Route>
 
               <Route exact path="/aboutUs">
-                {/* <AboutUs /> */}
+                <AboutUs />
               </Route>
             </Switch>
             <Footer />

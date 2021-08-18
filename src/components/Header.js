@@ -60,11 +60,11 @@ export default class Header extends React.Component {
                                             Programs
                                         </a>
                                     </li>
-                                    <li class="nav-item ">
+                                    {/* <li class="nav-item ">
                                         <a class="nav-link" href="/profile">
                                             Profile
                                         </a>
-                                    </li>
+                                    </li> */}
 
                                     <li class="nav-item pl-4">
                                         <a

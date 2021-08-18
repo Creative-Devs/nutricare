@@ -7,11 +7,11 @@ export class UpdatedRecipe extends React.Component {
         return (
             <div>
 
-                <Modal show={this.props.show} onHide={this.props.close}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Update a Recipe</Modal.Title>
+                <Modal show={this.props.show} onHide={this.props.close} >
+                    <Modal.Header style={{backgroundColor: '#8D2828'}} closeButton>
+                        <Modal.Title style={{  color: 'white' }}>Update a Recipe</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
+                    <Modal.Body style={{ backgroundColor: '#E3DFC8' }}>
                         <Form onSubmit={(e) => this.props.UpdateRecipe(e)}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Recipe Name</Form.Label>
@@ -38,11 +38,13 @@ export class UpdatedRecipe extends React.Component {
                                 <Form.Control type="text" name="url" defaultValue={this.props.updateRecipeObj.url} placeholder="Recipe URL" />
                             </Form.Group>
 
-                            <Button variant="primary" type="submit">
-                                Update Recipe
+                           
+                            <Modal.Footer >
+                            <Button style={{ backgroundColor: '#8D2828', marginTop: '2.5rem', marginLeft: '10rem' , height:'50px'}} variant="primary" type="submit">
+                                Update
                             </Button>
-                            <Modal.Footer>
-                                <Button variant="secondary" onClick={this.props.close}>
+
+                                <Button style={{ backgroundColor: '#8D2828', marginTop: '2.5rem', marginLeft: '2rem', height:'50px' }} variant="secondary" onClick={this.props.close}>
                                     Close
                                 </Button>
                             </Modal.Footer>
