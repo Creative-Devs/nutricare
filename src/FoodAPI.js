@@ -3,8 +3,9 @@ import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import axios from 'axios'
 import { withAuth0 } from '@auth0/auth0-react';
 import { Form, Button } from "react-bootstrap";
-import RecipeFormModal from "./components/RecipeFormModal"
-import UpdatedRecipe from "./components/UpdatedRecipe"
+import { HandIndexFill } from "react-bootstrap-icons";
+// import RecipeFormModal from "./components/RecipeFormModal"
+// import UpdatedRecipe from "./components/UpdatedRecipe"
 // import FavRecipes from "./components/FavRecipes"
 class FoodAPI extends React.Component {
     state = {
@@ -16,6 +17,7 @@ class FoodAPI extends React.Component {
         displayAddModal: false,
         updateRecipeObj: {},
         showUpdateModal: false,
+        showCards: false,
     };
     // handelDisplayModal = () => {
     //     this.setState({ displayAddModal: true });
@@ -34,7 +36,8 @@ class FoodAPI extends React.Component {
             .then(result => {
                 console.log(result.data)
                 this.setState({
-                    recipes: result.data.hits
+                    recipes: result.data.hits,
+                    showCards: true
                 })
             })
     }
@@ -60,16 +63,16 @@ class FoodAPI extends React.Component {
 
         }).catch(error => alert(error));
     }
-    getRecipes = async () => {
-        await axios.get(
-            `http://localhost:3030/recipes?email=${this.state.ownerEmail}`
-        ).then(axiosResponse => {
-            this.setState({
-                favRecipes: axiosResponse.data
-            });
-            console.log(this.favRecipes);
-        }).catch(error => alert(error));
-    };
+    // getRecipes = async () => {
+    //     await axios.get(
+    //         `http://localhost:3030/recipes?email=${this.state.ownerEmail}`
+    //     ).then(axiosResponse => {
+    //         this.setState({
+    //             favRecipes: axiosResponse.data
+    //         });
+    //         console.log(this.favRecipes);
+    //     }).catch(error => alert(error));
+    // };
 
 
     // deleteRecipe = (index) => {
@@ -124,112 +127,107 @@ class FoodAPI extends React.Component {
 
 
 
-    calorieCalculator = e => {
-        e.preventDefault();
-        const caloriesSearch = e.target.calories.value;
-        const url = `https://api.edamam.com/api/nutrition-data?app_id=cf3d9a5c&app_key=792374f75d59c4ae14eb1a0e5e280fab&nutrition-type=cooking&ingr=${caloriesSearch}`;
-        axios
-            .get(url)
-            .then(result => {
-                console.log(result.data)
-                this.setState({
-                    calories: result.data.calories,
-                })
-            })
-    }
+    // calorieCalculator = e => {
+    //     e.preventDefault();
+    //     const caloriesSearch = e.target.calories.value;
+    //     const url = `https://api.edamam.com/api/nutrition-data?app_id=cf3d9a5c&app_key=792374f75d59c4ae14eb1a0e5e280fab&nutrition-type=cooking&ingr=${caloriesSearch}`;
+    //     axios
+    //         .get(url)
+    //         .then(result => {
+    //             console.log(result.data)
+    //             this.setState({
+    //                 calories: result.data.calories,
+    //             })
+    //         })
+    // }
 
     render() {
         return (
-            <div>
-                {/* {this.state.favRecipes.map((recipe, index) => {
-                    return (
-                        <FavRecipes
-                            recipe={recipe}
-                            key={index} />
-                    )
-                })} */}
-                {/* <Button variant="secondary" onClick={() => this.handelDisplayModal()}>Add a Recipe</Button> */}
+            <div className='foodapi' style={{ backgroundColor: 'RGB(233, 214, 233)' }}>
+                <h1 className='headerclass' style={{ color: '#8D2828', fontFamily: 'Patrick Hand, cursive' }}>Healthy Recipes</h1>
 
-                {/* <RecipeFormModal
-                    show={this.state.displayAddModal}
-                    handelDisplayModal={this.handelDisplayModal}
-                    addRecipe={this.addRecipe}
-                />
-                {this.state.showUpdateModal &&
-                    <UpdatedRecipe
-                        show={this.state.showUpdateModal}
-                        close={this.handelUpdatedModal}
-                        UpdateRecipe={this.UpdateRecipe}
-                        updateRecipeObj={this.state.updateRecipeObj}
-                    />
-                } */}
+                <Card style={{ marginLeft: '200px', marginRight: '200px', backgroundColor: 'rgb(241, 221, 221)' }}>
+                    <Form className="recipeform" style={{ fontSize: '25px', width: "65%", marginLeft: "15%" }}
+                        onSubmit={this.recipeSearching}>
+                        <Button style={{ marginLeft: '625px', position: 'relative', top: '38px', backgroundColor: '#8D2828' }} className="formbutton" type='submit'>Search</Button>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Control placeholder='Search For Healthy Recipes' type="text" name="search" />
+                        </Form.Group>
 
-                {this.state.recipes.map((recipe, index) => (
-                    <Card key={index} style={{ width: '20rem', float: 'right', margin: '2rem 4rem 1rem 2rem' }} className="text-center mb-3 bg-dark">
-                        <Card.Title className="p-3 text-white">Name: {recipe.recipe.label}</Card.Title>
-                        <ListGroupItem>
-                            <Card.Img src={recipe.recipe.image} fluid="true" alt="No image for this movie" />
-                        </ListGroupItem>
-                        <Card.Body className="bg-info" style={{ maxHeight: '10rem' }}>
-                            Calories:{' '}
-                            {Math.round(recipe.recipe.calories) + ' kcal'}
-                        </Card.Body>
-                        <ListGroup className="list-group-flush">
+                    </Form>
+                </Card>
+
+                {this.state.showCards &&
+                    this.state.recipes.map((recipe, index) => (
+                        <Card key={index} style={{ width: '20rem', float: 'right', margin: '2rem 4rem 1rem 2rem', backgroundColor: '#8D2828' }} >
+                            <Card.Title className="p-3 text-white" >Name: {recipe.recipe.label}</Card.Title>
                             <ListGroupItem>
-                                totalWeight:{' '}
-                                <span>
-                                    {Math.round(recipe.recipe.totalWeight) + ' g'}
-                                </span>
+                                <Card.Img src={recipe.recipe.image} fluid="true" alt="No image for this movie" />
                             </ListGroupItem>
-                            <ListGroupItem>
+                            <Card.Body style={{ maxHeight: '10rem', backgroundColor: '#E3DFC8' }}>
+                                Calories:{' '}
+                                {Math.round(recipe.recipe.calories)}
+                            </Card.Body>
+                            <ListGroup >
+                                <ListGroupItem style={{ backgroundColor: '#E3DFC8' }}>
+                                    totalWeight:{' '}
+                                    <span>
+                                        {Math.round(recipe.recipe.totalWeight) + ' g'}
+                                    </span>
+                                </ListGroupItem>
+                                {/* <ListGroupItem>
                                 Recipe Details:{' '}
                                 <span>
                                     {recipe.recipe.url}
                                 </span>
-                            </ListGroupItem>
-                            <ListGroupItem>
-                                Source:{' '}
-                                <span >
-                                    {recipe.recipe.source}
-                                </span>
-                            </ListGroupItem>
-                            <ListGroupItem>
+                            </ListGroupItem> */}
+                                <ListGroupItem style={{ backgroundColor: '#E3DFC8' }}>
+                                    Source:{' '}
+                                    <span >
+                                        {recipe.recipe.source}
+                                    </span>
+                                </ListGroupItem>
+                                {/* <ListGroupItem>
                                 Diet Labels:{' '}
                                 <span >
                                     {recipe.recipe.dietLabels}
                                 </span>
-                            </ListGroupItem>
-                            <Button variant="outline-danger" style={{ marginLeft: '10px' }} onClick={() => this.addRecipe(index)}>Add to favorite</Button>
+                            </ListGroupItem> */}
+                                <Button style={{ backgroundColor: '#8D2828' }} onClick={() => this.addRecipe(index)}>Add to favorite</Button>
 
-                        </ListGroup>
-                    </Card>
-                ))}
-                <Form onSubmit={this.recipeSearching}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Search</Form.Label>
-                        <Form.Control type="text" name="search" />
-                    </Form.Group>
-                    {/* <Button variant="primary" type="submit">
-                        Submit
-                    </Button> */}
-                </Form>
-                <Form onSubmit={this.calorieCalculator}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Calculate Calories</Form.Label>
-                        <Form.Control type="text" name="calories" />
-                    </Form.Group>
-                    {/* <Button variant="primary" type="submit">
-                        Submit
-                    </Button> */}
-                </Form>
-                Calories:{' '}
-                <span style={{ color: 'black' }}>
-                    {(this.state.calories + this.state.unit)}
-                </span>
-                <img src={this.state.analyze} alt="" />
+                            </ListGroup>
+                        </Card>
+                    ))}
 
+                {/* <span style={{ color: 'black' }}> */}
+                {/* {(this.state.calories + this.state.unit)} */}
+                {/* </span> */}
+                {/* <img src={this.state.analyze} alt="" /> */}
+
+                {/* <Form onSubmit={this.calorieCalculator}>
+            <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Calculate Calories</Form.Label>
+                    Calories:{' '}
+                    <Form.Control type="text" name="calories" />
+                </Form.Group>
+              
+            </Form> */}
+
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+                </style>
             </div>
+
         )
     }
 }
+
+
+
+
+
+
 export default withAuth0(FoodAPI);

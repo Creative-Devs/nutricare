@@ -1,12 +1,42 @@
 body {
   background-color: rgb(233, 214, 233);
   text-align: center;
+  background-image: url('https://i0.wp.com/saintpolicesystems.com/wp-content/uploads/2018/06/blue-light-backgrounds-background-opera-image-graphics-community-speeddials.jpg?w=1440');
 }
 
 h1 {
-  color: rgb(255, 255, 255);
-  padding-top: 40px;
+  color: rgb(99, 19, 19);
+  padding-top: 50px;
   padding-bottom: 40px;
-  font-size: 60px;
+  font-size: 50px;
   font-family: 'Anton', sans-serif;
 }
+
+.cardBody {
+  background-color: beige;
+  font-family: 'Acme', sans-serif;
+  font-family: 'Bahianita', cursive;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Play', sans-serif;
+}
+
+.cardTitle {
+  padding: 6%;
+  background-color: beige;
+}
+
+#Weight Loss Programs {
+  margin-left: 20px;
+}
+
+.Sec1 {
+  /* padding-inline-end: 30px; */
+  padding-right: 45px;
+}
+
+/* .wLClass{
+  color: rgb(95, 6, 6);
+  font-size: 60px;
+  font-family: 'Anton', sans-serif;
+} */

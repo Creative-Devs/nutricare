@@ -15,10 +15,10 @@ class Home extends React.Component {
     render() {
         return (
             <section>
-                <img height="400px" width="1300" src={hero} alt="hero"></img>
+                <img height="500px" width="1300" src={hero} alt="hero"></img>
 
 
-                <Button style={{ marginTop: '70px' }} class="btn"> GET STARTED </Button>
+                <Button style={{ marginTop: '70px' }} class="btn"> Get Healthy Recipes </Button>
 
 
                 <Container>
@@ -37,43 +37,43 @@ class Home extends React.Component {
 
                 <Carousel style={{ fontSize: '25px', backgroundColor: "#333", width: "65%", textAlign: 'center', marginLeft: "18%" }}>
                     <Carousel.Item>
-                        <img
+                        <img height="550px" width="950"
                             className="d-block w-100"
                             src="https://apollosugar.com/wp-content/uploads/2020/01/PCOS-Diet-Apollo-Sugar.jpg"
                             alt="First slide"
                         />
                         <Carousel.Caption className='carsouselInfo'>
-                            <h3>WEIGHT MANAGEMENT</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h3 >WEIGHT MANAGEMENT</h3>
+                            <p>Don't wish for a good body, work for it.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img
+                        <img height="550px" width="950"
                             className="d-block w-100"
-                            src="https://assets.sweat.com/html_body_blocks/images/000/011/922/original/PWR_at_Home_Workout_ena86967915ab4c3c11809ad2c17d9bd2c.jpg?1554678228"
+                            src="https://servingjoy.com/wp-content/uploads/2015/04/Best-Methods-for-Creating-a-Successful-Exercise-Habit.jpg"
                             alt="Second slide"
                         />
 
-                        <Carousel.Caption className='carsouselInfo'>
+                        <Carousel.Caption className='carsouselInfoImage'>
                             <h3>DIET AND EXERCISE</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p>You can't exercise your way out of a bad diet</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img
+                        <img height="550px" width="950"
                             className="d-block w-100"
                             src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/2/14/0/FNK_Herbed-Chicken-Marsala_s4x3.jpg.rend.hgtvcom.966.725.suffix/1371614296995.jpeg"
                             alt="Third slide"
                         />
 
-                        <Carousel.Caption className='carsouselInfo'>
-                            <h3>Healthy Recipes</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <Carousel.Caption className='carsouselInfoImage3'>
+                            {/* <h3>Healthy Recipes</h3>
+                            <p>The Foods We Choose Make A Difference.</p> */}
                         </Carousel.Caption>
                     </Carousel.Item>
 
                     <Carousel.Item>
-                        <img
+                        <img height="550px" width="950"
                             className="d-block w-100"
                             src="https://www.bulletproof.com/wp-content/uploads/2018/11/Depression-and-Keto_Take-mood-boosting-supplements--752x401.jpg"
                             alt="Third slide"
@@ -95,10 +95,10 @@ class Home extends React.Component {
                                 <Card
                                     //                      bg={}
                                     // text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
-                                    className="mb-2" border="light" style={{ width: '22rem' }}>
+                                    className="cardClase" border="light" style={{ width: '22rem' }} >
 
                                     <Card.Img height="360px" width="300" variant="top" src="https://images.pexels.com/photos/1105166/pexels-photo-1105166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
-                                    <Card.Body>
+                                    <Card.Body className='cardBody'>
                                         <Card.Title className='cardTitle'>Diet and Nutrition</Card.Title>
                                         <br />
                                         <Card.Text className='cardText'>
@@ -119,9 +119,9 @@ class Home extends React.Component {
                             </Col>
 
                             <Col xs={6} md={4}>
-                                <Card height="300px" width="300" className="mb-2" border="light" style={{ width: '22rem' }}>
+                                <Card className="cardClase" height="400px" width="300" border="light" style={{ width: '22rem' }}>
                                     <Card.Img variant="top" src="https://static.onecms.io/wp-content/uploads/sites/44/2017/12/28020846/yoga-102959762_1x1.jpg" />
-                                    <Card.Body>
+                                    <Card.Body className='cardBody'>
                                         <Card.Title className='cardTitle'>Physical activity and exercise</Card.Title>
                                         <Card.Text className='cardText'>
                                             <br />
@@ -136,7 +136,6 @@ class Home extends React.Component {
 
                                             3- Regular exercise can help control body weight and in some people cause loss of fat.
 
-
                                         </Card.Text>
                                     </Card.Body>
 
@@ -145,9 +144,10 @@ class Home extends React.Component {
 
 
                             <Col xs={6} md={4}>
-                                <Card height="400px" width="300" className="mb-2" border="light" style={{ width: '22rem' }}>
+                                <Card className="cardClase" height="400px" width="300" border="light" style={{ width: '22rem' }}>
+
                                     <Card.Img height="360px" width="300" variant="top" src="https://www.geisinger.org/-/media/OneGeisinger/Images/ghs/health-and-wellness/Wellness-Articles/2019/2019-3-anti-smoking-web.jpg?w=0&h=0&as=1&hash=D31A7F07D88B934CDEDF13F3448B9707EB0534F7" />
-                                    <Card.Body>
+                                    <Card.Body className='cardBody'>
                                         <Card.Title className='cardTitle'>Avoid tobacco use</Card.Title>
                                         <Card.Text className='cardText'>
                                             <br />
@@ -185,6 +185,21 @@ class Home extends React.Component {
                         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Fira+Sans:ital@1&family=Teko:wght@500&display=swap');
                     </style>
 
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+                    </style>
+
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Acme&family=Dancing+Script:wght@700&display=swap');
+                    </style>
+
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Acme&family=Dancing+Script:wght@700&family=Fira+Sans+Condensed&display=swap');
+                    </style>
+
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Acme&family=Dancing+Script:wght@700&family=Fira+Sans+Condensed&family=Play&display=swap');
+                    </style>
 
                 </div>
             </section>

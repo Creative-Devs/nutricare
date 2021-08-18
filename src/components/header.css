@@ -1,2 +1,10 @@
+.navbar-brand {
+  font-family: 'Architects Daughter', cursive;
+  font-family: 'Cairo', sans-serif;
+  font-family: 'Caveat', cursive;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Lobster', cursive;
+  font-family: 'Permanent Marker', cursive;
+}
 
- 
+/* style={{fontFamily:'monospace',fontSize:'36px'}} */

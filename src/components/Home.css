@@ -1,4 +1,4 @@
-/* .container {
+.container {
   position: relative;
 }
 .container {
@@ -7,22 +7,22 @@
 }
 .btn {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 86%;
+  left: 31.5%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: rgb(181, 180, 182);
-  color: rgb(42, 37, 37);
+  background-color: rgb(235, 74, 11);
+  color: rgb(255, 246, 246);
   font-size: 30px;
   padding: 12px 24px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Dancing Script', cursive;
 }
 .btn:hover {
-  background-color: rgb(224, 175, 175);
+  background-color: rgb(99, 19, 19);
 }
 section {
   background: rgb(241, 221, 221);
@@ -31,10 +31,13 @@ section {
 }
 
 .healthy-living {
-  color: rgb(143, 53, 53);
+  color: rgb(117, 10, 10);
   font-size: 25px;
   margin: 5%;
-  font-family: 'Teko', sans-serif;
+  font-family: 'Acme', sans-serif;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Play', sans-serif;
 }
 
 .cardTitle {
@@ -44,17 +47,32 @@ section {
 
 .cardText {
   font-family: 'Fira Sans', sans-serif;
-  color: rgb(179, 113, 113);
+  color: rgb(129, 9, 9);
 }
 
 .healthyTips {
-  font-family: 'Anton', sans-serif;
+  font-size: xx-large;
   color: rgb(143, 53, 53);
   margin-top: 5%;
   margin-bottom: 3%;
+  font-family: 'Teko', sans-serif;
 }
 
 .carsouselInfo {
   font-family: 'Teko', sans-serif;
-  color: rgb(82, 66, 66);
-} */
+  color: rgb(235, 74, 11);
+}
+
+.cardBody {
+  background-color: beige;
+}
+
+.carsouselInfoImage {
+  color: antiquewhite;
+  font-family: 'Teko', sans-serif;
+}
+
+.carsouselInfoImage3 {
+  color: rgb(255, 255, 255);
+  font-family: 'Teko', sans-serif;
+}

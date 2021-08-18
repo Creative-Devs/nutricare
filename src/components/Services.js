@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button, Modal, Form } from 'react-bootstrap';
-// import './service.css';
+import './service.css';
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
@@ -29,15 +29,25 @@ class Services extends React.Component {
 
   render() {
     return (
-      <>
-        <Container>
+      <main style={{ backgroundColor: 'beige' }}>
+        <br></br>
+        <Container style={{ marginTop: '0px' }}>
 
           <Card className="bg-dark text-white" >
             <Card.Img height="300px" src="https://images.unsplash.com/photo-1494859802809-d069c3b71a8a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="Card image" />
             <Card.ImgOverlay>
               <Card.Title style={{ textAlign: 'center', fontSize: "xxx-large", fontFamily: 'Patrick Hand', color: 'black' }}>Programs</Card.Title>
+
+              <Card.Text style={{ padding: '10px', fontFamily: 'Patrick Hand', fontSize: '25px', fontWeight: 'bold', color: 'black' }} >
+                In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without
+                In publishing and grommonly used to demonstrate the visual form of a document or a typeface without
+
+              </Card.Text>
+
+
+
               <Card.Text>
-                <Button href="/programs" style={{ width: "25%", marginTop: "120px", fontSize: "small", height: '40px', backgroundColor: 'rgb(199, 80, 80)', textAlign: 'center' }} >
+                <Button class="button" href="/programs" style={{ float: 'center', width: "200px", fontSize: "15px", borderRadius: '8px', border: 'none', height: '50px', backgroundColor: 'rgb(116, 218, 116)', textAlign: 'center', color: 'white' }} >
                   Click to see the Programs
                 </Button>
               </Card.Text>
@@ -47,22 +57,22 @@ class Services extends React.Component {
 
 
 
-        <br></br>
-        <br></br>
+
         <br></br>
         <Container>
 
           <Card className="text-center">
-            <Card.Header style={{ fontSize: "xx-large", fontFamily: 'Patrick Hand', backgroundColor: 'rgb(186, 199, 211)' }}>Calculate Calories</Card.Header>
-            <Card.Body>
-              <Card.Title>Enter to calculate</Card.Title>
+            <Card.Header style={{ fontSize: "xxx-large", fontFamily: 'Patrick Hand', backgroundColor: 'rgb(189,176,160)' }}>Calculate Calories</Card.Header>
+            <Card.Body style={{ backgroundColor: 'rgb(255,246,230)' }} >
+              <Card.Title style={{ padding: '20px', fontFamily: 'Patrick Hand', fontSize: 'xx-large' }} >Enter to calculate</Card.Title>
               <Card.Text>
                 <div class="input-group">
                   <form>
-                    <input style={{ width: '400px' }} type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                    <input style={{ width: '900px', marginLeft: '90px' }} type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                       aria-describedby="search-addon" />
-                    <br></br>  <button type="button" style={{
-                      width: '400px', height: '40px', backgroundColor: 'rgb(199, 80, 80)', border: 'none'
+                    <button class="button" type="button" style={{
+                      marginLeft: '80px', width: '200px', height: '50px', borderRadius: '8px', backgroundColor: 'rgb(116, 218, 116)', border: 'none'
+                      , marginTop: '9px', color: 'white'
                     }}>search</button>
 
                   </form>
@@ -70,8 +80,7 @@ class Services extends React.Component {
 
 
               </Card.Text>
-              <Card.Text>
-                hello for test
+              <Card.Text style={{ float: 'left', fontSize: "xx-large" }}>
               </Card.Text>
 
             </Card.Body>
@@ -81,30 +90,35 @@ class Services extends React.Component {
         </Container>
 
         <br></br>
-        <br></br>
-        <br></br>
+
 
 
         <Container>
 
 
           <Card >
-            <Card.Header style={{ width: "100%", margin: '0px', fontSize: "xx-large", backgroundColor: 'rgb(186, 199, 211)', textAlign: 'center' }}>Nutritions Consulting</Card.Header>
+            <Card.Header style={{ height: '90px', width: "100%", margin: '0px', fontFamily: 'Patrick Hand', fontSize: "xxx-large", backgroundColor: 'rgb(189,176,160)', textAlign: 'center' }}>Nutritions Consulting</Card.Header>
 
 
-            <Card.Body style={{ padding: '20px' }}>
+            <Card.Body style={{ padding: '20px', fontFamily: 'Patrick Hand', backgroundColor: 'rgb(255,246,230)' }} >
 
-              <Card.Text>
-                Plant-based diets may help you lose weight. Vegetarianism and veganism are the most popular versions, which restrict animal products for health, ethical, and environmental reasons.
+              <Card.Text style={{ float: 'left', fontSize: 'xx-large' }}>
+                <div >
+                  Plant-based diets may help you lose weight. Vegetarianism and veganism are the most popular versions, which restrict animal products for health, ethical, and environmental reasons.
+                  However, more flexible plant-ba
+                  sed diets also exist, such as the fl
+                  exitarian diet, which is a plant-based diet that allows eati
+                  ng animal products in moderation.
+                </div>
 
-                However, more flexible plant-based diets also exist, such as the flexitarian diet, which is a plant-based diet that allows eating animal products in moderation.
+                {/* </Card.Text> */}
+
+                {/* <Card.Text> */}
+                <br></br>
 
 
-              </Card.Text>
-              <br></br>
 
-              <Card.Text>
-                <Button variant="primary" style={{ width: "50%", marginTop: '90px', fontSize: "medium", height: '40px', backgroundColor: 'rgb(199, 80, 80)' }} onClick={this.handleShow}>
+                <Button class="button" variant="primary" style={{ float: 'center', width: '200px', height: '50px', marginTop: '0px', fontSize: "medium", backgroundColor: 'rgb(116, 218, 116)', borderRadius: '8px', border: 'none' }} onClick={this.handleShow}>
                   Book Consulting
                 </Button>
               </Card.Text>
@@ -149,25 +163,22 @@ class Services extends React.Component {
           </Modal.Footer>
         </Modal>
         <br></br>
-        <br></br>
-        <br></br>
+
 
         <Container>
 
-          <h3 style={{ height: '60px', textAlign: 'center', backgroundColor: 'rgb(186, 199, 211)' }}> Our Nutritions</h3>
-        </Container>
+          <h3 style={{ height: '70px', fontSize: 'xxx-large', fontFamily: 'Patrick Hand', textAlign: 'center', backgroundColor: 'rgb(189,176,160)' }}> Our Nutritions</h3>
 
-        <Container>
           <Row>
             <Col xs={6} md={4}>
               <Card>
-                <Card.Img variant="top" src="https://thumbs.dreamstime.com/z/smiling-black-female-nutrition-adviser-apple-tape-measure-looking-camera-clinic-weight-loss-specialist-promoting-198078903.jpg" height="350px" width="300px" />
-                <Card.Body>
-                  <Card.Title>Nutrition Janice Newell </Card.Title>
-                  <Card.Text>
+                <Card.Img variant="top" src="https://retaildietitians.com/site/assets/files/11314/dietitianlabcoat.1000x600.jpg" height="350px" width="300px" />
+                <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)' }}>
+                  <Card.Title style={{ fontFamily: 'Patrick Hand', fontSize: 'xx-large' }} >Nutrition Janice Newell </Card.Title>
+                  {/* <Card.Text>
                     This is a wider card with supporting text below as a natural lead-in to
                     additional content. This content is a little bit longer.
-                  </Card.Text>
+                  </Card.Text> */}
                 </Card.Body>
 
               </Card>
@@ -177,12 +188,12 @@ class Services extends React.Component {
             <Col xs={6} md={4}>
               <Card>
                 <Card.Img variant="top" src="https://st3.depositphotos.com/1177973/15225/i/950/depositphotos_152255688-stock-photo-young-female-nutritionist.jpg" height="350px" width="300px" />
-                <Card.Body>
-                  <Card.Title> Nutrition Sally Kuzemchak</Card.Title>
-                  <Card.Text>
+                <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)' }}>
+                  <Card.Title style={{ fontFamily: 'Patrick Hand', fontSize: 'xx-large' }}> Nutrition Sally Kuzemchak</Card.Title>
+                  {/* <Card.Text>
                     This is a wider card with supporting text below as a natural lead-in to
                     additional content. This content is a little bit longer.
-                  </Card.Text>
+                  </Card.Text> */}
                 </Card.Body>
 
               </Card>
@@ -190,13 +201,13 @@ class Services extends React.Component {
             </Col>
             <Col xs={6} md={4}>
               <Card>
-                <Card.Img variant="top" src="https://media.istockphoto.com/photos/pretty-female-dietologist-holding-apple-in-her-hand-and-smiling-picture-id1224770135?s=612x612" height="350px" width="300px" />
-                <Card.Body>
-                  <Card.Title> Nutrition Mitzi Dulan</Card.Title>
-                  <Card.Text>
+                <Card.Img variant="top" src="https://themes.muffingroup.com/be/dietitian/wp-content/uploads/2015/10/home_dietitian_pic1.jpg" height="350px" width="300px" />
+                <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)' }}>
+                  <Card.Title style={{ fontFamily: 'Patrick Hand', fontSize: 'xx-large' }}> Nutrition Mitzi Dulan</Card.Title>
+                  {/* <Card.Text>
                     This is a wider card with supporting text below as a natural lead-in to
                     additional content. This content is a little bit longer.
-                  </Card.Text>
+                  </Card.Text> */}
                 </Card.Body>
 
               </Card>
@@ -208,11 +219,10 @@ class Services extends React.Component {
           </Row>
 
 
-
         </Container>
+        <br></br>
 
-      </>
-
+      </main>
     )
   }
 }

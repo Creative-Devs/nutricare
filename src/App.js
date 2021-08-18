@@ -17,6 +17,7 @@ import FoodAPI from './FoodAPI';
 import Programs from './components/Programs';
 import Services from './components/Services'
 import FavRecipes from './components/FavRecipes'
+// import AboutUs from './components/AboutUs'
 
 class App extends React.Component {
   render() {
@@ -68,9 +69,9 @@ class App extends React.Component {
                 <FavRecipes />
               </Route>
 
-              {/* <Route exact path="/aboutUs">
-                <AboutUs/>
-              </Route> */}
+              <Route exact path="/aboutUs">
+                {/* <AboutUs /> */}
+              </Route>
             </Switch>
             <Footer />
           </IsLoadingAndError>
