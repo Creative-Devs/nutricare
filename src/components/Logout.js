@@ -11,8 +11,8 @@ function Logout() {
 
     return isAuthenticated && (
         <Card >
-            <Card.Body style={{ marginLeft: '1200px' }}>
-                <button style={{ position: 'absolute', bottom: '55px' }} onClick={() => {
+            <Card.Body style={{ marginLeft: '1160px' }}>
+                <button style={{ position: 'absolute', bottom: '5.7rem' }} onClick={() => {
                     logout({ returnTo: window.location.origin });
                 }}>Log out</button>
             </Card.Body>

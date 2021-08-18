@@ -32,7 +32,7 @@ class FavRecipes extends React.Component {
                 <Card style={{ width: '38rem', float: 'right', margin: '2rem 4rem 1rem 2rem' }} className="text-center mb-3 bg-dark" >
                     <Card.Title className="p-3 text-white">Title: {recipe.label}</Card.Title>
                     <ListGroupItem>
-                        <Card.Img style={{ height: '20rem' }} src={this.state.favRecipes[0].image} fluid="true" alt="No image for this recipe" />
+                        <Card.Img style={{ height: '20rem' }} src={recipe.image} fluid="true" alt="No image for this recipe" />
                     </ListGroupItem>
                     <Card.Body className="bg-info" style={{ maxHeight: '10rem' }}>
                         {recipe.calories}

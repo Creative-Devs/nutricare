@@ -35,7 +35,7 @@ class App extends React.Component {
                   <>
                     <Logout />
                     <Home />
-
+                    <FavRecipes />
                   </>
                 )}
                 {!isAuthenticated && (
@@ -53,6 +53,12 @@ class App extends React.Component {
                     <FavRecipes />
                   </>
                 )}
+                {!isAuthenticated && (
+                  <>
+                    <Login />
+                    <Profile />
+                  </>
+                )}
               </Route>
               <Route exact path="/programs">
                 <Logout />
@@ -63,10 +69,27 @@ class App extends React.Component {
                 <Services />
               </Route>
               <Route exact path="/recipes">
-                <FoodAPI />
+                {isAuthenticated && (
+                  <>
+                    <Logout />
+                    <FoodAPI />
+                    <FavRecipes />
+                  </>
+                )}
+                {!isAuthenticated && (
+                  <>
+                    <Login />
+                    <FoodAPI />
+                  </>
+                )}
               </Route>
               <Route exact path="/favorite">
-                <FavRecipes />
+                {isAuthenticated && (
+                  <>
+                    <Logout />
+                    <FavRecipes />
+                  </>
+                )}
               </Route>
 
               <Route exact path="/aboutUs">
