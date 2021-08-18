@@ -11,7 +11,7 @@ class Footer extends React.Component {
     return (
 
       <>
-        <footer style={{ marginTop: '20%' }}>
+        <footer style={{ marginTop: '150rem' }}>
 
           <h3 class="title-logo--footer">Follow<span>Us</span></h3>
 

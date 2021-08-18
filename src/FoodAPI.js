@@ -54,12 +54,6 @@ class FoodAPI extends React.Component {
         };
         axios.post(`http://localhost:3030/recipe`, body).then(axiosResponse => {
             console.log(axiosResponse.data);
-            this.state.recipes.push(axiosResponse.data);
-            this.setState({
-                recipes: this.state.recipes
-
-            });
-            console.log(this.state.recipes);
 
         }).catch(error => alert(error));
     }

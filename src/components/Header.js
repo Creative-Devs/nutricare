@@ -60,6 +60,15 @@ export default class Header extends React.Component {
 
                                         </a>
                                     </li>
+                                    <li class="nav-item pl-1">
+                                        <a
+                                            class="nav-link"
+                                            href="/favorite"
+                                        >
+                                            favorite
+
+                                        </a>
+                                    </li>
                                     <li class="nav-item pl-5">
                                         <a
                                             class="nav-link"

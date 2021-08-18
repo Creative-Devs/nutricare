@@ -13,44 +13,48 @@ class FavRecipes extends React.Component {
             ownerEmail: this.props.auth0.user.email,
         }
     }
-    getRecipes = async () => {
+
+    componentDidMount = async () => {
         await axios.get(
             `http://localhost:3030/recipes?email=${this.state.ownerEmail}`
         ).then(axiosResponse => {
+            console.log(axiosResponse.data)
             this.setState({
                 favRecipes: axiosResponse.data
             });
-            console.log(this.favRecipes);
         }).catch(error => alert(error));
     };
 
     render() {
         return (
-            <>
-                <Card style={{ width: '38rem', float: 'right', margin: '2rem 4rem 1rem 2rem' }} className="text-center mb-3 bg-dark">
-                    <Card.Title className="p-3 text-white">Title: {this.favRecipes[0].label}</Card.Title>
+
+            this.state.favRecipes.map((recipe, index) => (
+                <Card style={{ width: '38rem', float: 'right', margin: '2rem 4rem 1rem 2rem' }} className="text-center mb-3 bg-dark" >
+                    <Card.Title className="p-3 text-white">Title: {recipe.label}</Card.Title>
                     <ListGroupItem>
                         <Card.Img style={{ height: '20rem' }} src={this.state.favRecipes[0].image} fluid="true" alt="No image for this recipe" />
                     </ListGroupItem>
                     <Card.Body className="bg-info" style={{ maxHeight: '10rem' }}>
-                        {this.state.favRecipes[0].calories}
+                        {recipe.calories}
                     </Card.Body>
                     <ListGroup className="list-group-flush">
                         <ListGroupItem>
                             Total Weight:{' '}
                             <span>
-                                {this.state.favRecipes[0].totalWeight}
+                                {recipe.totalWeight}
                             </span>
                         </ListGroupItem>
                         <ListGroupItem>
                             URL:{' '}
                             <span>
-                                {this.state.favRecipes[0].url}
+                                {recipe.url}
                             </span>
                         </ListGroupItem>
                     </ListGroup>
                 </Card>
-            </>
+
+            ))
+
         )
     }
 }
