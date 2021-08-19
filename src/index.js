@@ -8,8 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 ReactDOM.render(
   <Auth0Provider
-    domain="dev-tnv4t733.us.auth0.com"
-    clientId="gf9itfI4lpesKtEmWSsaPmBYLPMtYmqA"
+    domain={process.env.REACT_APP_DOMAIN}
+    clientId={process.env.REACT_APP_CLIENT_ID}
     redirectUri={window.location.origin}
   >
     <App />
