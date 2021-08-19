@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button, Modal, Form } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Modal, Form, CloseButton } from 'react-bootstrap';
 import './service.css';
 import axios from 'axios'
 import service from './images/Care.png'
@@ -45,6 +45,20 @@ class Services extends React.Component {
   }
 
 
+  submitForm = (event) => {
+    event.preventDefault();
+    const bode = {
+      name: event.target.name.value,
+      age: event.target.age.value,
+      weight: event.target.weight.value,
+      height: event.target.height.value,
+
+    }
+    console.log(bode);
+
+  }
+
+
   render() {
     return (
       <main style={{ backgroundColor: 'beige' }}>
@@ -54,7 +68,7 @@ class Services extends React.Component {
           <Card className="bg-dark text-white" >
             <Card.Img height="300px" src={service} alt="Card image" />
             <Card.ImgOverlay>
-              <Card.Title style={{ textAlign: 'center', fontSize: "xxx-large", fontFamily: 'Patrick Hand', color: 'black' }}>Programs</Card.Title>
+              <Card.Title style={{ marginLeft: '4rem', textAlign: 'center', fontSize: "xx-large", fontFamily: 'Patrick Hand', color: 'black' }}>Programs</Card.Title>
 
               <Card.Text style={{ padding: '5px', fontFamily: 'Patrick Hand', fontSize: '25px', fontWeight: 'bold', color: 'black' }} >
                 {/* We provide you with Diet programs for what you need */}
@@ -63,7 +77,7 @@ class Services extends React.Component {
 
 
               <Card.Text>
-                <Button class="button" href="/programs" style={{ width: "200px", fontSize: "14px", borderRadius: '8px', border: 'none', height: '50px', backgroundColor: '#444', textAlign: 'center', color: 'white', marginTop: '10rem', fontFamily: 'Times new Roman' }} >
+                <Button className="button" href="/programs" style={{ width: "220px", fontSize: "19px", borderRadius: '8px', border: 'none', height: '60px', backgroundColor: '#444', textAlign: 'center', color: 'white', marginTop: '11rem', marginLeft: '2rem', fontFamily: 'Times new Roman' }} >
                   Show Programs
                 </Button>
               </Card.Text>
@@ -84,9 +98,9 @@ class Services extends React.Component {
               <Card.Text>
                 <Form className="caloriesform" style={{ width: "65%", marginLeft: "15%" }}
                   onSubmit={this.calorieCalculator}>
-                  <Button style={{ height: '56px', marginLeft: '625px', position: 'relative', top: '86px', left: '27%', backgroundColor: '#8D2828', fontSize: "20px", fontFamily: 'Helvetica' }} className="formbutton" type='submit'>Calculate</Button>
+                  <Button style={{ height: '56px', marginLeft: '625px', position: 'relative', top: '86px', left: '27%', backgroundColor: '#8D2828', fontSize: "20px", fontFamily: 'Helvetica', textAlign: 'center' }} className="formbutton" type='submit'>Calculate</Button>
                   <Form.Group className="mb-5" controlId="formBasicEmail">
-                    <Form.Control style={{ height: '60px' }} placeholder='Show Calories number' type="text" name="calories" />
+                    <Form.Control style={{ height: '50px' }} placeholder='Show Calories number' type="text" name="calories" />
                   </Form.Group>
 
                 </Form>
@@ -123,7 +137,12 @@ class Services extends React.Component {
                   exitarian diet, which is a plant-based diet that allows eati
                   ng animal products in moderation.
                 </div>
+                <p>
+                  {
+                    this.state.name
+                  }
 
+                </p>
                 {/* </Card.Text> */}
 
                 {/* <Card.Text> */}
@@ -131,7 +150,7 @@ class Services extends React.Component {
 
 
 
-                <Button class="button" variant="primary" style={{ float: 'center', width: '200px', height: '50px', marginTop: '0px', fontSize: "medium", backgroundColor: 'rgb(116, 218, 116)', borderRadius: '8px', border: 'none' }} onClick={this.handleShow}>
+                <Button class="button" variant="primary" style={{ textAlign: 'center', float: 'center', width: '200px', height: '70px', marginTop: '0px', fontSize: "19px", backgroundColor: 'rgb(116, 218, 116)', borderRadius: '8px', border: 'none' }} onClick={this.handleShow}>
                   Book Consulting
                 </Button>
               </Card.Text>
@@ -159,21 +178,31 @@ class Services extends React.Component {
           onHide={this.state.handleClose}
           backdrop="static"
           keyboard={false}>
-          <Modal.Header closeButton>
+          <Modal.Header >
             <Modal.Title >Nutritions Consulting</Modal.Title>
+            <CloseButton onClick={this.handleClose}>
+              close
+            </CloseButton>
           </Modal.Header>
           <Modal.Body>
-            <Form.Control size="lg" type="text" placeholder="Name" />
-            <br />
-            <Form.Control type="text" size="lg" placeholder="Age" />
-            <br />
-            <Form.Control size="lg" type="text" placeholder=" Wieght" />
-            <br />
-            <Form.Control size="lg" type="text" placeholder="Height" />
+            <Form onSubmit={(e) => this.props.submitForm(e)}>
+              Name
+              <Form.Control size="lg" type="text" placeholder="Name" name='name' />
+              <br />
+              Age
+              <Form.Control type="text" size="lg" placeholder="Age" name='age' />
+              <br />
+              weight
+              <Form.Control size="lg" type="text" placeholder=" weight" name='weight' />
+              <br />
+              Height
+              <Form.Control size="lg" type="text" placeholder="Height" name='height' />
+            </Form>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="primary">Submit</Button>
+          <Modal.Footer style={{ height: "80px" }}>
+            <Button style={{ marginTop: '40px', marginLeft: '90px' }} variant="primary" onSubmit={(e) => this.props.submitForm(e)}>Submit</Button>
           </Modal.Footer>
+
         </Modal>
         <br></br>
 
