@@ -1,0 +1,12 @@
+body {
+  background-color: rgb(233, 214, 233);
+  text-align: center;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 60px;
+  font-family: 'Anton', sans-serif;
+}
