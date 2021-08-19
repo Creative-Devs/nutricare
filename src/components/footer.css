@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Cairo:wght@200&family=Caveat&family=Dancing+Script&family=Gothic+A1:wght@300&family=Lobster&family=Patrick+Hand&family=Permanent+Marker&family=Raleway:ital@1&display=swap');
 
-/* footer */
-
 nfooter {
   clear: both;
   position: relative;
@@ -53,13 +51,6 @@ nfooter {
   opacity: 0.75;
 }
 
-/* .copy-rights,
-  .contactus-bar {
-    color: #a56666;
-    font-size: 80%;
-    font-weight: 200;
-  } */
-
 .imgHouse {
   width: 40%;
   height: 65%;
@@ -109,12 +100,6 @@ nfooter {
 .twitter:hover {
   opacity: 0.3;
 }
-
-/* footer {
-    position: relative;
-    height: 200px;
-  } */
-
 span {
   color: rgb(65, 65, 65);
 }

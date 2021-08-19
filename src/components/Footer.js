@@ -1,7 +1,5 @@
 import React from 'react';
-// import { Instagram } from 'react-bootstrap-icons';
 import './footer.css'
-// import instaIcon from './images/instaIcon.jpg';
 import facebook from './images/facebook.png'
 import insta from './images/insta.png'
 import twitter from './images/twitter.png'
@@ -32,10 +30,6 @@ class Footer extends React.Component {
             <img src={insta} style={{ height: '30px', width: '30px' }} class="insta" />
             <img src={twitter} style={{ height: '30px', width: '30px' }} class="twitter" />
 
-
-            {/* <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-google"></a>
-            <a href="#" class="fa fa-instagram"></a> */}
 
           </div>
           <div class="clear"></div>

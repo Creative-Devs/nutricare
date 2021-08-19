@@ -23,7 +23,6 @@ class Home extends React.Component {
 
                 <Container>
                     <figure>
-                        {/* <img  height="300px" width="400" src='https://healthyhealthfullifestyle.com/wp-content/uploads/2016/06/Purchased-from-123rf-IMG_2260-2442-800x416.jpg'/> */}
                         <figcaption class='healthy-living'>
                             <h2>
                                 What is healthy living?
@@ -67,8 +66,6 @@ class Home extends React.Component {
                         />
 
                         <Carousel.Caption className='carsouselInfoImage3'>
-                            {/* <h3>Healthy Recipes</h3>
-                            <p>The Foods We Choose Make A Difference.</p> */}
                         </Carousel.Caption>
                     </Carousel.Item>
 
@@ -93,7 +90,7 @@ class Home extends React.Component {
                         <Row>
                             <Col xs={6} md={4}>
                                 <Card
-                                  
+
                                     className="cardClase" border="light" style={{ width: '22rem' }} >
 
                                     <Card.Img height="360px" width="300" variant="top" src="https://images.pexels.com/photos/1105166/pexels-photo-1105166.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
@@ -174,29 +171,11 @@ class Home extends React.Component {
 
                     <style>
                         @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-                    </style>
-
-                    <style>
                         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Fira+Sans:ital@1&display=swap');
-                    </style>
-
-                    <style>
                         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Fira+Sans:ital@1&family=Teko:wght@500&display=swap');
-                    </style>
-
-                    <style>
                         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-                    </style>
-
-                    <style>
                         @import url('https://fonts.googleapis.com/css2?family=Acme&family=Dancing+Script:wght@700&display=swap');
-                    </style>
-
-                    <style>
                         @import url('https://fonts.googleapis.com/css2?family=Acme&family=Dancing+Script:wght@700&family=Fira+Sans+Condensed&display=swap');
-                    </style>
-
-                    <style>
                         @import url('https://fonts.googleapis.com/css2?family=Acme&family=Dancing+Script:wght@700&family=Fira+Sans+Condensed&family=Play&display=swap');
                     </style>
 
@@ -204,8 +183,5 @@ class Home extends React.Component {
             </section>
         )
     }
-
 }
-
-
 export default Home;

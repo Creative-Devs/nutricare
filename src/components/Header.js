@@ -60,12 +60,6 @@ export default class Header extends React.Component {
                                             Programs
                                         </a>
                                     </li>
-                                    {/* <li class="nav-item ">
-                                        <a class="nav-link" href="/profile">
-                                            Profile
-                                        </a>
-                                    </li> */}
-
                                     <li class="nav-item pl-4">
                                         <a
                                             class="nav-link"

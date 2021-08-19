@@ -4,140 +4,9 @@ import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import CardGroup from 'react-bootstrap/CardGroup';
-import Form from 'react-bootstrap/Form';
 import './Programs.css';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-
-
-
-// function myFunction() {
-//     var input, filter, cards, cardContainer, h5, title, i;
-//     input = document.getElementById("myFilter");
-//     filter = input.value.toUpperCase();
-//     cardContainer = document.getElementById("myItems");
-//     cards = cardContainer.getElementsByClassName("card");
-//     for (i = 0; i < cards.length; i++) {
-//         title = cards[i].querySelector(".card-body h5.card-title");
-//         if (title.innerText.toUpperCase().indexOf(filter) > -1) {
-//             cards[i].style.display = "";
-//         } else {
-//             cards[i].style.display = "none";
-//         }
-//     }
-// }
-
-
-// let option1 = document.getElementById('Courses')
-// let option2 = document.getElementById('Laptops')
-// let option3 = document.getElementById('Chairs')
-// let selection = document.getElementById('products')
-// selection.addEventListener('change', scroll)
-
-// function scroll(event) {
-//     if (selection.value === option1.value) {
-//         document.getElementById('course').scrollIntoView();
-//     } else if (selection.value === option2.value) {
-//         document.getElementById('laptop').scrollIntoView();
-//     } else if (selection.value === option3.value) {
-//         document.getElementById('chair').scrollIntoView();
-//     }
-// }
-
-// useEffect(() => {
-//     const el1 = document.querySelector('.el1')
-//     const el2 = document.querySelector('.el2')
-//   }, [])
-
-let ArrOFCard = [
-    {
-        header: 'Weight Loss Programs',
-        title: 'Best overall',
-    },
-    {
-        header: 'Weight Loss Programs',
-        title: 'For diabetes',
-    },
-    {
-        header: 'Weight Loss Programs',
-        title: 'For Heart Health',
-    },
-    {
-        header: 'Weight Loss Programs',
-        title: 'For Vegetarians',
-    },
-    {
-        header: 'Weight Loss Programs',
-        title: 'For older adults',
-    },
-    {
-        header: 'Weight Loss Programs',
-        title: 'On a budget',
-    },
-
-
-    {
-        header: 'Weight Stability Programs',
-        title: 'Intermittent fasting',
-    },
-    {
-        header: 'Weight Stability Programs',
-        title: 'Plant-based diets',
-    },
-    {
-        header: 'Weight Stability Programs',
-        title: 'Low-carb diets',
-    },
-    {
-        header: 'Weight Stability Programs',
-        title: 'The paleo diet',
-    },
-    {
-        header: 'Weight Stability Programs',
-        title: 'Low-fat diets',
-    },
-
-
-    {
-        header: 'Foods to gain weight',
-        title: 'Milk',
-    },
-    {
-        header: 'Foods to gain weight',
-        title: 'Protein shakes',
-    },
-    {
-        header: 'Foods to gain weight',
-        title: 'Rice',
-    },
-    {
-        header: 'Foods to gain weight',
-        title: 'Red meat',
-    },
-    {
-        header: 'Foods to gain weight',
-        title: 'Nuts and nut butter',
-    },
-];
-
-
-
-
 
 class Programs extends React.Component {
-
-    dataHandle = (event) => {
-
-        let newDataArray = ArrOFCard.filter((item) => {
-            if (item.header === event.target.value) {
-                return item;
-            }
-            else {
-                newDataArray = ArrOFCard
-            }
-
-        });
-        return newDataArray;
-    };
 
 
     render() {
@@ -196,17 +65,6 @@ class Programs extends React.Component {
                 </CardGroup>
 
                 <>
-{/* 
-                    <FloatingLabel controlId="floatingSelect" label="Select your Program">
-                        <Form.Select id='SelectPrograms' aria-label="Floating label select example" onChange={this.dataHandle} >
-                            <option value="">All Programs</option>
-                            <option value="Weight Loss Program">Weight Loss Programs</option>
-                            <option value="Weight Stability Program">Weight Stability Programs</option>
-                            <option value="Foods to gain weight">Weight Gain Programs</option>
-                        </Form.Select>
-                    </FloatingLabel> */}
-
-
 
                     <br />
                     <br />
@@ -216,11 +74,10 @@ class Programs extends React.Component {
 
                         <Col className='Sec1' >
                             <Row xs={6} md={3}>
-                                {/* ArrOFCard.filter(item) */}
 
 
                                 <Card className='wLClass' id='Weight Loss Programs' border="info" style={{ width: '18rem' }}>
-                                    <Card.Header>{ArrOFCard[0].header}
+                                    <Card.Header>Weight Loss Programs
                                     </Card.Header>
                                     <Card.Body className='cardBody'>
                                         <Card.Title>Best overall</Card.Title>
@@ -302,46 +159,6 @@ class Programs extends React.Component {
                                     </Card.Body>
                                 </Card>
                                 <br />
-                                {/* 
-                                <Card className='wLClass' id='Weight Loss Programs' border="info" style={{ width: '18rem' }}>
-                                    <Card.Header>Weight Loss Programs</Card.Header>
-                                    <Card.Body className='cardBody'>
-                                        <Card.Title>For Vegetarians</Card.Title>
-                                        <Card.Text>
-                                            ** Ornish Diet:
-                                            <br />
-                                            The Ornish Diet is a low fat, plant-based eating pattern that promotes nutritious ingredients like fruits, vegetables, whole grains, and legumes.
-                                            While weight control is not the primary goal of the Ornish Diet, multiple studies have found that it may be effective for long-term weight loss.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
-                                <br />
-                                <Card className='wLClass' id='Weight Loss Programs' border="info" style={{ width: '18rem' }}>
-                                    <Card.Header>Weight Loss Programs</Card.Header>
-                                    <Card.Body className='cardBody'>
-                                        <Card.Title>For older adults</Card.Title>
-                                        <Card.Text>
-                                            ** Jenny Craig:
-                                            <br />
-                                            Jenny Craig is a popular program that delivers prepackaged, portion-controlled meals to help simplify weight loss.
-                                            Jenny Craig may be an especially good fit for many older adults, as it’s simple, easy to follow, and doesn’t require extensive planning or preparation.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
-                                <br />
-                                <Card className='wLClass' id='Weight Loss Programs' border="info" style={{ width: '18rem' }}>
-                                    <Card.Header>Weight Loss Programs</Card.Header>
-                                    <Card.Body className='cardBody'>
-                                        <Card.Title>On a budget</Card.Title>
-                                        <Card.Text>
-                                            ** Vegetarian diet:
-                                            <br />
-                                            Switching to a vegetarian diet is a great way to lose weight and save some money.
-                                            In fact, plant-based protein sources like canned beans, lentils, tofu, and tempeh can be a cost-effective alternative to meat, poultry, and seafood.
-                                            Following a vegetarian diet can also be an easy way to boost weight loss.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card> */}
                                 <br />
 
                             </Row>
@@ -411,30 +228,6 @@ class Programs extends React.Component {
                                     </Card.Body>
                                 </Card>
                                 <br />
-
-                                {/* <Card className='wLClass' id='Weight Stability Programs' border="secondary" style={{ width: '18rem' }}>
-                                    <Card.Header>
-                                        Weight Stability Programs</Card.Header>
-                                    <Card.Body className='cardBody'>
-                                        <Card.Title>The paleo diet</Card.Title>
-                                        <Card.Text>
-                                            The paleo diet advocates eating whole foods, fruits, vegetables, lean meats, nuts, and seeds. It restricts the consumption of processed foods, grains, sugar, and dairy, though some less restrictive
-                                            versions allow for some dairy products like cheese.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
-                                <br />
-                                <Card className='wLClass' id='Weight Stability Programs' border="secondary" style={{ width: '18rem' }}>
-                                    <Card.Header>
-                                        Weight Stability Programs</Card.Header>
-                                    <Card.Body className='cardBody'>
-                                        <Card.Title>Low-fat diets
-                                        </Card.Title>
-                                        <Card.Text>
-                                            Low-fat diets restrict fat intake because fat provides about twice the number of calories per gram, compared with the other two macronutrients — protein and carbs.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card> */}
                                 <br />
                             </Row>
                         </Col>
@@ -502,28 +295,6 @@ class Programs extends React.Component {
                                     </Card.Body>
                                 </Card>
                                 <br />
-
-                                {/* <Card className='wLClass' id='Foods to gain weight' border="danger" style={{ width: '18rem' }}>
-                                    <Card.Header>Foods to gain weight</Card.Header>
-                                    <Card.Body className='cardBody'>
-                                        <Card.Title> Red meat</Card.Title>
-                                        <Card.Text>
-                                            Consuming red meat has been shown to help with building muscle and gaining weight.
-                                            Steak contains both leucine and creatine, nutrients that play a significant role in boosting muscle mass. Steak and other red meats contain both protein and fat, which promote weight gain.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card>
-                                <br />
-                                <Card className='wLClass' id='Foods to gain weight' border="danger" style={{ width: '18rem' }}>
-                                    <Card.Header>Foods to gain weight</Card.Header>
-                                    <Card.Body className='cardBody'>
-                                        <Card.Title>Nuts and nut butter</Card.Title>
-                                        <Card.Text>
-                                            Consuming nuts regularly can help a person to gain weight safely. Nuts are a great snack and can be added to many meals, including salads. Raw or dry roasted nuts have the most health benefits.
-                                            Nut butters made without added sugar or hydrogenated oils can also help. The only ingredient in these butters should be the nuts themselves.
-                                        </Card.Text>
-                                    </Card.Body>
-                                </Card> */}
                                 <br />
 
                             </Row>
@@ -533,18 +304,11 @@ class Programs extends React.Component {
 
                     <style>
                         @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-                    </style>
-
-                    <style>
                         @import url('https://fonts.googleapis.com/css2?family=Acme&family=Bahianita&family=Dancing+Script:wght@700&family=Fira+Sans+Condensed&family=Play&display=swap');
                     </style>
 
                 </>
-
-
             </body>
-
-
         )
     }
 }

@@ -15,16 +15,16 @@ class FavRecipes extends React.Component {
             ownerEmail: this.props.auth0.user.email,
             updateRecipeObj: {},
             showUpdateModal: false,
-            closeModal:false,
+            closeModal: false,
         }
     }
 
-handleCloseModal =()=> {
+    handleCloseModal = () => {
 
-    this.setState({
-        closeModal: false
-    })
-}
+        this.setState({
+            closeModal: false
+        })
+    }
 
     componentDidMount = async () => {
         await axios.get(
@@ -106,24 +106,24 @@ handleCloseModal =()=> {
 
                 {this.state.favRecipes.map((recipe, index) => (
                     <Card style={{ width: '20rem', float: 'right', margin: '8rem 4rem 1rem 2rem', backgroundColor: '#8D2828' }} className="text-center mb-3" >
-                        <Card.Title style={{backgroundColor: '#8D2828'}} className="p-3 text-white">{recipe.label}</Card.Title>
+                        <Card.Title style={{ backgroundColor: '#8D2828' }} className="p-3 text-white">{recipe.label}</Card.Title>
                         <ListGroupItem>
                             <Card.Img style={{ height: '20rem' }} src={recipe.image} fluid="true" alt="No image for this recipe" />
                         </ListGroupItem>
                         <Card.Body style={{ maxHeight: '10rem', backgroundColor: '#E3DFC8' }}>
-                            {'Calories: ' + Math.round(recipe.calories) + ' cal' }
+                            {'Calories: ' + Math.round(recipe.calories) + ' kcal'}
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroupItem style={{ backgroundColor: '#E3DFC8'}}>
+                            <ListGroupItem style={{ backgroundColor: '#E3DFC8' }}>
                                 Total Weight:{' '}
                                 <span>
-                                    {Math.round(recipe.totalWeight)+ ' g'}
+                                    {Math.round(recipe.totalWeight) + ' g'}
                                 </span>
                             </ListGroupItem>
-                            <ListGroupItem style={{ backgroundColor: '#E3DFC8'}}>
+                            <ListGroupItem style={{ backgroundColor: '#E3DFC8' }}>
                                 Get More{' '}
                                 <span>
-                                <a href={recipe.url}>Details</a>
+                                    <a href={recipe.url}>Details</a>
                                     {/* {recipe.url} */}
                                 </span>
                             </ListGroupItem>
@@ -131,8 +131,8 @@ handleCloseModal =()=> {
 
                         <div className='ButtonDiv'>
 
-                        <Button style={{ backgroundColor: '#8D2828', marginTop: '8rem', marginLeft: '-1rem' }} onClick={() => this.deleteRecipe(recipe._id)}>Delete</Button>
-                        <Button style={{ backgroundColor: '#8D2828', marginTop: '8rem', marginLeft: '7rem' }} variant="outline-danger" onClick={() => this.handelUpdatedModal(recipe)}>Update</Button>
+                            <Button style={{ backgroundColor: '#8D2828', marginTop: '8rem', marginLeft: '-1rem' }} onClick={() => this.deleteRecipe(recipe._id)}>Delete</Button>
+                            <Button style={{ backgroundColor: '#8D2828', marginTop: '8rem', marginLeft: '7rem' }} variant="outline-danger" onClick={() => this.handelUpdatedModal(recipe)}>Update</Button>
 
                         </div>
                     </Card>

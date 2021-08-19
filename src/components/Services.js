@@ -45,18 +45,18 @@ class Services extends React.Component {
   }
 
 
-  submitForm = (event) => {
-    event.preventDefault();
-    const bode = {
-      name: event.target.name.value,
-      age: event.target.age.value,
-      weight: event.target.weight.value,
-      height: event.target.height.value,
+  // submitForm = (event) => {
+  //   event.preventDefault();
+  //   const bode = {
+  //     name: event.target.name.value,
+  //     age: event.target.age.value,
+  //     weight: event.target.weight.value,
+  //     height: event.target.height.value,
 
-    }
-    console.log(bode);
+  //   }
+  //   console.log(bode);
 
-  }
+  // }
 
 
   render() {
@@ -143,9 +143,6 @@ class Services extends React.Component {
                   }
 
                 </p>
-                {/* </Card.Text> */}
-
-                {/* <Card.Text> */}
                 <br></br>
 
 
@@ -160,18 +157,6 @@ class Services extends React.Component {
 
         </Container>
 
-
-        {/* <Card className="text-center">
-  <Card.Body>
-    
-    
-    <Card.Title style={{fontSize:"xxx-large",position: 'absolute',top: '50%',left: '20%',transform: 'translate(-50%, -50%)'}}> Body building</Card.Title>
-    <Card.Text>
-    <Card.Img variant="bottom" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&q=80" heighr="200px" />
-    </Card.Text> 
-  </Card.Body>
-  
-</Card> */}
 
         <Modal
           show={this.state.show}
@@ -217,14 +202,9 @@ class Services extends React.Component {
                 <Card.Img variant="top" src="https://retaildietitians.com/site/assets/files/11314/dietitianlabcoat.1000x600.jpg" height="350px" width="300px" />
                 <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)' }}>
                   <Card.Title style={{ fontFamily: 'Patrick Hand', fontSize: 'xx-large' }} >Nutrition Janice Newell </Card.Title>
-                  {/* <Card.Text>
-                    This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
-                  </Card.Text> */}
                 </Card.Body>
 
               </Card>
-              {/* <Image src="https://getfood.refb.org/uploads/images/_1152xAUTO_crop_center-center_none/Cover-photo-retouched.jpg" height="300px" width="300px" rounded /> */}
             </Col>
 
             <Col xs={6} md={4}>
@@ -232,35 +212,20 @@ class Services extends React.Component {
                 <Card.Img variant="top" src="https://st3.depositphotos.com/1177973/15225/i/950/depositphotos_152255688-stock-photo-young-female-nutritionist.jpg" height="350px" width="300px" />
                 <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)' }}>
                   <Card.Title style={{ fontFamily: 'Patrick Hand', fontSize: 'xx-large' }}> Nutrition Sally Kuzemchak</Card.Title>
-                  {/* <Card.Text>
-                    This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
-                  </Card.Text> */}
                 </Card.Body>
 
               </Card>
-              {/* <Image src="https://getfood.refb.org/uploads/images/_1152xAUTO_crop_center-center_none/Cover-photo-retouched.jpg" height="300px" width="300px" rounded /> */}
             </Col>
             <Col xs={6} md={4}>
               <Card>
                 <Card.Img variant="top" src="https://themes.muffingroup.com/be/dietitian/wp-content/uploads/2015/10/home_dietitian_pic1.jpg" height="350px" width="300px" />
                 <Card.Body style={{ backgroundColor: 'rgb(255, 246, 230)' }}>
                   <Card.Title style={{ fontFamily: 'Patrick Hand', fontSize: 'xx-large' }}> Nutrition Mitzi Dulan</Card.Title>
-                  {/* <Card.Text>
-                    This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
-                  </Card.Text> */}
                 </Card.Body>
 
               </Card>
-              {/* <Image src="https://getfood.refb.org/uploads/images/_1152xAUTO_crop_center-center_none/Cover-photo-retouched.jpg" height="300px" width="300px" rounded /> */}
             </Col>
-
-
-
           </Row>
-
-
         </Container>
         <br></br>
 

@@ -15,7 +15,7 @@ const Profile = () => {
                 <img src={user.picture} alt={user.name} />
                 <h2>{user.name}</h2>
                 <p>{user.email}</p>
-                <Card className='card' style={{ width: '18rem' }}>
+                {/* <Card className='card' style={{ width: '18rem' }}>
                     <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
                     <Card.Body>
                         <Card.Title>label</Card.Title>
@@ -34,7 +34,7 @@ const Profile = () => {
                         <Card.Link href="#">Source:{' '}</Card.Link>
 
                     </Card.Body>
-                </Card>
+                </Card> */}
             </div>
         )
     );
