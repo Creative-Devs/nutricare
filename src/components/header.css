@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Cairo:wght@200&family=Caveat&family=Dancing+Script&family=Lobster&family=Permanent+Marker&display=swap');
+
+.navbar-brand {
+  font-family: 'Architects Daughter', cursive;
+  font-family: 'Cairo', sans-serif;
+  font-family: 'Caveat', cursive;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Lobster', cursive;
+  font-family: 'Permanent Marker', cursive;
+}

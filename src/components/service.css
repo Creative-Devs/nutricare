@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+  text-align: center;
+  padding: 10px 10px;
+}
+
+.container .btn {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgb(197, 86, 86);
+  color: white;
+  font-size: 25px;
+  padding: 5px 50px;
+  border: none;
+  border-radius: 5px;
+  text-align: right;
+  display: flex;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+
+.fixed {
+  position: absolute;
+}
