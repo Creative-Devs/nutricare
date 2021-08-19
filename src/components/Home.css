@@ -1,0 +1,80 @@
+.container {
+  position: relative;
+}
+.container {
+  width: 100%;
+  height: auto;
+}
+.btn {
+  position: absolute;
+  top: 86%;
+  left: 31.5%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgb(235, 74, 11);
+  color: rgb(255, 246, 246);
+  font-size: 30px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+}
+.btn:hover {
+  background-color: rgb(99, 19, 19);
+}
+section {
+  background: rgb(241, 221, 221);
+  background-image: url('https://i0.wp.com/saintpolicesystems.com/wp-content/uploads/2018/06/blue-light-backgrounds-background-opera-image-graphics-community-speeddials.jpg?w=1440');
+  text-align: center;
+}
+
+.healthy-living {
+  color: rgb(117, 10, 10);
+  font-size: 25px;
+  margin: 5%;
+  font-family: 'Acme', sans-serif;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Play', sans-serif;
+}
+
+.cardTitle {
+  font-family: 'Anton', sans-serif;
+  color: rgb(143, 53, 53);
+}
+
+.cardText {
+  font-family: 'Fira Sans', sans-serif;
+  color: rgb(129, 9, 9);
+}
+
+.healthyTips {
+ 
+  font-size: xx-large;
+  color: rgb(143, 53, 53);
+  margin-top: 5%;
+  margin-bottom: 3%;
+  font-family: 'Teko', sans-serif;
+  
+}
+
+.carsouselInfo {
+  font-family: 'Teko', sans-serif;
+  color: rgb(235, 74, 11);
+}
+
+.cardBody{
+  background-color:beige ;
+}
+
+.carsouselInfoImage{
+  color: antiquewhite; 
+  font-family: 'Teko', sans-serif;
+}
+
+.carsouselInfoImage3{
+  color: rgb(255, 255, 255);
+  font-family: 'Teko', sans-serif;
+}
